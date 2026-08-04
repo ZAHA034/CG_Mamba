@@ -1,0 +1,51 @@
+{
+  "_schema": "split_boundaries_v1",
+  "built_at": "2026-05-17T11:31:17.686724Z",
+  "design": "Single dataset + boundary metadata (PLAN v2.0.5 \u00a74.2). Loader uses these epiweek ranges to filter; lookback windows cross boundaries (predictors only).",
+  "splits": {
+    "train": {
+      "epiweek_first": 200140,
+      "epiweek_last": 201839,
+      "description": "17 seasons (2001-02 ~ 2017-18)"
+    },
+    "val": {
+      "epiweek_first": 201840,
+      "epiweek_last": 202010,
+      "description": "Val: W40-2018 ~ W10-2020 (truncate at COVID onset)"
+    },
+    "covid_excluded": {
+      "epiweek_first": 202011,
+      "epiweek_last": 202039,
+      "description": "COVID hole: W11-2020 ~ W39-2020 \u2014 neither val nor test"
+    },
+    "test": {
+      "epiweek_first": 202040,
+      "epiweek_last": 202535,
+      "description": "Test: W40-2020 ~ W35-2025 (~5 partial seasons)"
+    }
+  },
+  "test_post_covid_DEPRECATED_v2_0_4": {
+    "epiweek_first": 202140,
+    "epiweek_last": 202535,
+    "description": "DEPRECATED (v2.0.4 spec): Test w/o COVID = 2021-22 ~ 2024-25 (204 rows). Superseded by 'test_strict' in v2.1.7-A++ (PLAN §4.1) because 2021-22 std=0.70 is anomalous. Field kept temporarily for backward-compat; do NOT use for new evaluations."
+  },
+  "test_strict": {
+    "epiweek_first": 202240,
+    "epiweek_last": 202535,
+    "description": "Test_strict (v2.1.7-A++, PLAN §4.1): W40-2022 ~ W35-2025 (152 rows = 3 post-recovery seasons 2022-23 / 2023-24 / 2024-25). Excludes both 2020-21 (NPI strong suppression) and 2021-22 (atypical timing, std=0.70). Subset of 'test' (Test_full)."
+  },
+  "_v2_1_7_A_pp_notes": "v2.1.7-A++ COVID exclusion update: literature-backed strict mask (CDC FluSight About + Olsen 2020 MMWR + Merced-Morales 2022 MMWR + Adlhoch 2021 + Melidou 2022 Eurosurveillance + Borchering 2024 Nature Communications). See PLAN.md §4.1.",
+  "scaler_columns": [
+    "ili_weighted_pct",
+    "temperature_c",
+    "specific_humidity_g_per_kg"
+  ],
+  "row_counts": {
+    "train": 868,
+    "val": 75,
+    "covid_excluded": 29,
+    "test": 257,
+    "test_strict": 152,
+    "test_post_covid_DEPRECATED_v2_0_4": 204
+  }
+}

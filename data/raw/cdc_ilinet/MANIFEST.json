@@ -1,0 +1,41 @@
+{
+  "_schema": "cdc_fluview_download_manifest_v1",
+  "downloaded_at": "2026-05-26T17:48:57.940695Z",
+  "source": "CDC FluView National via CMU Delphi Epidata API",
+  "api_endpoint": "https://api.delphi.cmu.edu/epidata/fluview/",
+  "license": "Public domain (US federal government work, 17 USC \u00a7105)",
+  "citation": "Centers for Disease Control and Prevention. FluView Interactive Dashboard. https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Accessed via CMU Delphi Epidata API (https://cmu-delphi.github.io/delphi-epidata/api/fluview.html).",
+  "query": {
+    "epiweeks": "200140-202618",
+    "region": "nat"
+  },
+  "n_records": 1265,
+  "date_first": "2001-09-30",
+  "date_last": "2026-05-03",
+  "epiweek_first": 200140,
+  "epiweek_last": 202618,
+  "output": {
+    "path": "data/raw/cdc_ilinet/_phase3_phase6_fetch/national_full.csv",
+    "size_bytes": 107302,
+    "sha256": "4af19baf96be84475189baff0a71364982dc6397b60e5c53685b1b17031ede44"
+  },
+  "columns": [
+    "date",
+    "year",
+    "week",
+    "region",
+    "ili_weighted_pct",
+    "ili_unweighted_pct",
+    "total_ili_count",
+    "num_providers",
+    "num_patients",
+    "release_date",
+    "issue",
+    "lag"
+  ],
+  "known_caveats": [
+    "CDC revises recent-week values retroactively. Latest issue used (lag=0 = most recent revision).",
+    "MMWR week format: epiweek = YYYY*100 + WW; week 53 occurs in some years.",
+    "Pre-2010 wili reflects original CDC reporting prior to denominator revisions."
+  ]
+}

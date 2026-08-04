@@ -1,0 +1,189 @@
+{
+  "_schema": "rolling_cutoffs_v1",
+  "built_at": "2026-07-23T12:22:51.558866Z",
+  "pre_registered": true,
+  "cutoffs": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2022,
+    2023,
+    2024
+  ],
+  "covid_excluded_test_seasons": [
+    "2019-20",
+    "2020-21",
+    "2021-22"
+  ],
+  "note": "Expanding-window rolling-origin. Normalization re-fit per cutoff train (no leakage). Nothing in data/processed/ is modified.",
+  "PREREG_covid_asymmetry": "post-COVID cutoffs (2022-24) include the suppressed-flu 2020-21 & 2021-22 seasons in TRAINING (natural expanding window); pre-COVID cutoffs (2015-18) do not. Cross-cutoff differences are therefore NOT attributed solely to test-period shift (training composition also differs). Only the COVID hole 202011-202039 is excluded from all splits.",
+  "PREREG_eval_window": "test = FULL season incl. summer weeks = same all-weeks method as headline test_strict; chosen so this is a robustness check of the headline, not a different window.",
+  "PREREG_verdict_table": {
+    "primary_endpoint": "per cutoff: is CG-Mamba closest-to-nominal (min |Cov95-0.95|, h=1-4 avg) in ALL 10 HHS regions?",
+    "baseline_set": "vs the 5 DL baselines ONLY: LSTM, Vanilla Mamba, PatchTST, DLinear-ensemble, EpiDeep. SARIMAX EXCLUDED (not native UQ). This set is fixed here; may NOT be narrowed/widened by result.",
+    "tie_rule": "strict delta=-1 (CG min in all 10) counts any margin; ADDITIONALLY record per cutoff the number of the 10 regions with a CLEAR margin (CG |dev| at least 0.02 below the best baseline's |dev| -- 0.02 chosen < wILI revision noise 0.034 so sub-noise 0.001-level 'wins' are not counted as clear). A '10/10' composed mostly of <0.02 margins is flagged noise-fragile, not strong replication.",
+    "scoring": "CG scored as RAW NATIVE APMD (s_per_h NOT applied) -- identical to headline; NOT the Scaled variant (repeating the IV-F Scaled/native trap is forbidden). Driver asserts this.",
+    "robust": ">=6/7 cutoffs replicate strict 10/10 -> may claim 'calibration dominance replicates across forecast origins'",
+    "partial": "4-5/7 -> 'replicates in most origins; weaker in [named cutoffs]' (conditional)",
+    "failed": "<=3/7 -> rolling-origin WEAKENS the headline; retract the robustness claim; report as-is",
+    "baseline_wins": "any cutoff where a baseline beats CG in some region -> disclose which origin & which region",
+    "secondary_recorded": "per cutoff ALSO record WIS and MAE (national + regional) -- reported as secondary (no claim), stored for result-blind completeness so a 'calibration robust but WIS breaks at cutoff X' pattern cannot be hidden.",
+    "sanity_gate_quantitative": "driver on the CANONICAL headline split (train 2001-2018, test 2022-25) MUST reproduce regional Cov95 within 0.954 +/- 0.01 AND per-horizon ~0.998 -> 0.910; outside this band => treat as DRIVER BUG, HALT and investigate (NOT a scientific result).",
+    "unconditional": [
+      "report result regardless of direction",
+      "no rule change after computing",
+      "if <=3/7, it goes in the paper anyway",
+      "pass the quantitative sanity gate before trusting any rolling number"
+    ]
+  },
+  "manifest": [
+    {
+      "Y": 2015,
+      "test_season": "2015-2016",
+      "train": [
+        200140,
+        201439,
+        659
+      ],
+      "val": [
+        201440,
+        201539,
+        53
+      ],
+      "test": [
+        201540,
+        201639,
+        52
+      ],
+      "csv_sha256": "dc55be0552b15544",
+      "dir": "runs/rolling_origin/cut2015"
+    },
+    {
+      "Y": 2016,
+      "test_season": "2016-2017",
+      "train": [
+        200140,
+        201539,
+        712
+      ],
+      "val": [
+        201540,
+        201639,
+        52
+      ],
+      "test": [
+        201640,
+        201739,
+        52
+      ],
+      "csv_sha256": "c1e9124bedf987fd",
+      "dir": "runs/rolling_origin/cut2016"
+    },
+    {
+      "Y": 2017,
+      "test_season": "2017-2018",
+      "train": [
+        200140,
+        201639,
+        764
+      ],
+      "val": [
+        201640,
+        201739,
+        52
+      ],
+      "test": [
+        201740,
+        201839,
+        52
+      ],
+      "csv_sha256": "6a57a62434571032",
+      "dir": "runs/rolling_origin/cut2017"
+    },
+    {
+      "Y": 2018,
+      "test_season": "2018-2019",
+      "train": [
+        200140,
+        201739,
+        816
+      ],
+      "val": [
+        201740,
+        201839,
+        52
+      ],
+      "test": [
+        201840,
+        201939,
+        52
+      ],
+      "csv_sha256": "88e73a51b891bcfa",
+      "dir": "runs/rolling_origin/cut2018"
+    },
+    {
+      "Y": 2022,
+      "test_season": "2022-2023",
+      "train": [
+        200140,
+        202139,
+        996
+      ],
+      "val": [
+        202140,
+        202239,
+        52
+      ],
+      "test": [
+        202240,
+        202339,
+        52
+      ],
+      "csv_sha256": "65d9abff4f2eecde",
+      "dir": "runs/rolling_origin/cut2022"
+    },
+    {
+      "Y": 2023,
+      "test_season": "2023-2024",
+      "train": [
+        200140,
+        202239,
+        1048
+      ],
+      "val": [
+        202240,
+        202339,
+        52
+      ],
+      "test": [
+        202340,
+        202439,
+        52
+      ],
+      "csv_sha256": "247010be4425da37",
+      "dir": "runs/rolling_origin/cut2023"
+    },
+    {
+      "Y": 2024,
+      "test_season": "2024-2025",
+      "train": [
+        200140,
+        202339,
+        1100
+      ],
+      "val": [
+        202340,
+        202439,
+        52
+      ],
+      "test": [
+        202440,
+        202539,
+        48
+      ],
+      "csv_sha256": "30a43913b7e6fcc3",
+      "dir": "runs/rolling_origin/cut2024"
+    }
+  ]
+}

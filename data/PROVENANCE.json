@@ -1,0 +1,146 @@
+{
+  "_schema": "cg_mamba_data_provenance_v1",
+  "project": "CG-Mamba (Context-Gated Mamba) — IEEE JBHI submission 2026",
+  "milestone": "Phase 1 M1.1 — Data pipeline",
+  "plan_reference": "CG_Mamba_PLAN.md v2.0.5 §4 Data",
+  "built_at_utc": "2026-05-17",
+
+  "datasets": {
+    "cdc_fluview_ilinet": {
+      "name": "CDC FluView National Weekly ILI (ILINet)",
+      "source": "Centers for Disease Control and Prevention, Influenza Division",
+      "access": "CMU Delphi Epidata API (https://api.delphi.cmu.edu/epidata/fluview/)",
+      "license": "Public domain (US federal government work, 17 USC §105)",
+      "auth_required": false,
+      "citation": "Centers for Disease Control and Prevention. FluView Interactive Dashboard. https://gis.cdc.gov/grasp/fluview/fluportaldashboard.html. Accessed via CMU Delphi Epidata API.",
+      "delphi_citation": "Farrow DC et al. (2015). Delphi epidata API: a unified gateway to epidemiological data sources. https://cmu-delphi.github.io/delphi-epidata/",
+      "epiweek_range": "200140 - 202539  (24 seasons, MMWR 2001-W40 to 2025-W39)",
+      "region": "nat (national, US)",
+      "n_records": 1233,
+      "raw_path": "data/raw/cdc_ilinet/national_weekly.csv",
+      "raw_manifest": "data/raw/cdc_ilinet/MANIFEST.json"
+    },
+
+    "noaa_ncei_isd_hourly": {
+      "name": "NOAA NCEI Integrated Surface Database (ISD) — Global Hourly",
+      "source": "National Centers for Environmental Information, NOAA",
+      "access": "Bulk HTTPS download (https://www.ncei.noaa.gov/data/global-hourly/access/{YEAR}/{ISD_ID}.csv)",
+      "license": "Public domain (US federal government work, 17 USC §105)",
+      "auth_required": false,
+      "documentation": "https://www.ncei.noaa.gov/data/global-hourly/doc/isd-format-document.pdf",
+      "citation": "Smith A, Lott N, Vose R (2011). The Integrated Surface Database: Recent Developments and Partnerships. Bulletin of the American Meteorological Society, 92, 704-708.",
+      "stations": "10 primary ASOS stations at top US MSA airports (2020 Census ranking)",
+      "msa_aggregation": "Population-weighted national mean (Shaman et al. 2013, Reich et al. 2019 standard)",
+      "year_range": "2001 - 2025  (covers PLAN v2.0.5 Train + Val + Test)",
+      "n_files_downloaded": 250,
+      "raw_path": "data/raw/noaa_isd/{isd_id}/{year}.csv",
+      "raw_manifest": "data/raw/noaa_isd/MANIFEST.json",
+      "stations_table": [
+        {"rank": 1, "msa": "New York-Newark-Jersey City", "iata": "LGA", "isd_id": "72503014732", "pop2020": 20140470, "weight": 0.2304},
+        {"rank": 2, "msa": "Los Angeles-Long Beach-Anaheim", "iata": "LAX", "isd_id": "72295023174", "pop2020": 13200998, "weight": 0.1510},
+        {"rank": 3, "msa": "Chicago-Naperville-Elgin", "iata": "ORD", "isd_id": "72530094846", "pop2020": 9618502, "weight": 0.1100},
+        {"rank": 4, "msa": "Dallas-Fort Worth-Arlington", "iata": "DFW", "isd_id": "72259003927", "pop2020": 7637387, "weight": 0.0874},
+        {"rank": 5, "msa": "Houston-The Woodlands-Sugar Land", "iata": "IAH", "isd_id": "72243012960", "pop2020": 7122240, "weight": 0.0815},
+        {"rank": 6, "msa": "Washington-Arlington-Alexandria", "iata": "DCA", "isd_id": "72405013743", "pop2020": 6385162, "weight": 0.0730},
+        {"rank": 7, "msa": "Philadelphia-Camden-Wilmington", "iata": "PHL", "isd_id": "72408013739", "pop2020": 6245051, "weight": 0.0715},
+        {"rank": 8, "msa": "Miami-Fort Lauderdale-Pompano Beach", "iata": "MIA", "isd_id": "72202012839", "pop2020": 6138333, "weight": 0.0702},
+        {"rank": 9, "msa": "Atlanta-Sandy Springs-Alpharetta", "iata": "ATL", "isd_id": "72219013874", "pop2020": 6089815, "weight": 0.0697},
+        {"rank": 10, "msa": "Phoenix-Mesa-Chandler", "iata": "PHX", "isd_id": "72278023183", "pop2020": 4845832, "weight": 0.0554}
+      ],
+      "population_source": "US Census Bureau (2021). 2020 Census Apportionment Results.",
+      "total_population_2020": 87423790
+    }
+  },
+
+  "pipeline_stages": [
+    {
+      "stage": "M1.1-1..M1.1-5",
+      "name": "ISD parse: hourly CSV -> daily Parquet",
+      "script": "src/data/parse_isd.py",
+      "input": "data/raw/noaa_isd/{isd_id}/{year}.csv",
+      "output": "data/interim/noaa_daily/{isd_id}_daily.parquet",
+      "method": "Filter REPORT_TYPE in {FM-15, FM-12}, parse TMP/DEW with QC in {0,1,4,5,9,A,C,I,M,P,R,U}, drop +9999 sentinels, daily groupby mean. Compute q_g via Bolton (1980): e=6.112*exp(17.67*Td/(Td+243.5)), q=0.622*e/(P-0.378*e)*1000, P=1013.25 hPa.",
+      "qc_codes_valid": ["0", "1", "4", "5", "9", "A", "C", "I", "M", "P", "R", "U"],
+      "report_types_valid": ["FM-15", "FM-12"],
+      "sanity_lga_2020": {"days": 366, "n_obs_hourly_mean": 31.9, "temp_c_mean": 14.59, "dew_c_mean": 5.87, "q_g_kg_mean": 6.84}
+    },
+    {
+      "stage": "M1.1-6",
+      "name": "Daily -> weekly population-weighted national",
+      "script": "src/data/build_env_weekly.py",
+      "input": "data/interim/noaa_daily/{isd_id}_daily.parquet (10 stations)",
+      "output": "data/processed/env_national_weekly.csv",
+      "method": "Date -> MMWR (year, week) via epiweeks.Week.fromdate(). Per-station weekly mean. Population-weighted aggregate across 10 MSAs (weights from 2020 Census, sum=1.0). Missing-station weights redistributed proportionally (renormalize).",
+      "n_records": 1287,
+      "epiweek_range": "200101 - 202535"
+    },
+    {
+      "stage": "M1.1-7",
+      "name": "CDC ILI + env merge",
+      "script": "src/data/build_merged_weekly.py",
+      "output": "data/processed/ili_env_weekly.csv",
+      "method": "Inner join on epiweek. MMWR Sunday alignment verified across CDC and NOAA per joined row.",
+      "n_records": 1229,
+      "epiweek_range": "200140 - 202535",
+      "date_range": "2001-09-30 - 2025-08-24"
+    },
+    {
+      "stage": "M1.1-8",
+      "name": "Season split + scaler",
+      "script": "src/data/build_splits.py",
+      "outputs": [
+        "data/processed/ili_env_weekly_split.csv",
+        "data/processed/split_boundaries.json",
+        "data/processed/normalization_params.json"
+      ],
+      "design": "Single dataset + boundary metadata (PLAN v2.0.5 §4.2). Lookback windows can cross boundaries (predictors only).",
+      "splits": {
+        "train":          {"epiweek": "200140-201839", "n_rows": 868, "seasons": "17 (2001-02 ~ 2017-18)"},
+        "val":            {"epiweek": "201840-202010", "n_rows": 75,  "note": "truncated at W10-2020 (pre-COVID onset)"},
+        "covid_excluded": {"epiweek": "202011-202039", "n_rows": 29,  "note": "COVID hole — neither val nor test"},
+        "test":           {"epiweek": "202040-202535", "n_rows": 257, "seasons": "5 partial (2020-21 ~ 2024-25 partial)"}
+      },
+      "test_post_covid_subset": {"epiweek": "202140-202535", "n_rows": 204},
+      "scaler": "StandardScaler fit on TRAIN ONLY (mean, population std). No val/test leakage."
+    },
+    {
+      "stage": "M1.1-9",
+      "name": "Validation tests",
+      "script": "src/data/validate_dataset.py",
+      "tests": ["MMWR alignment", "no dup/monotonic", "no NaN", "value ranges", "split non-overlap", "row count sum", "test_post_covid subset", "scaler train-only", "sha256 vs manifest"],
+      "status": "all 9 tests passed"
+    }
+  ],
+
+  "key_design_choices": {
+    "noaa_data_source": "ISD station-level + population-weighted aggregation chosen over nClimDiv area-weighted because ILI literature (Shaman 2013, Reich 2019, Du 2017) uses population-weighted national mean. Matches CDC FluView's weighted-by-state-population %wILI methodology.",
+    "msa_count_10": "Top 10 MSAs by 2020 Census covers 26.4% of US population. Following Shaman et al. (2013) which used 18 cities; Reich et al. (2019) used 10 representative urban centers.",
+    "specific_humidity_formula": "Bolton (1980) saturation vapor pressure at dew point. Standard pressure 1013.25 hPa (error <=2% for typical 990-1030 hPa range).",
+    "humidity_naming_clarification": "Literature variously calls 'absolute humidity' or 'specific humidity'. We use specific humidity q [g/kg] computed from temperature + dew point via Bolton 1980 (Shaman et al. 2013 standard). PLAN v2.0.5 wording 'absolute_humidity' was colloquial; v2.0.6 corrected to 'specific_humidity_g_per_kg'.",
+    "covid_handling": "Train: pre-COVID (-> W39-2018). Val: truncate at W10-2020. COVID W11-2020 ~ W39-2020 excluded. Test: W40-2020 ~ W35-2025. Reporting: 'Test full' and 'Test w/o COVID (W40-2021 ~ W35-2025, 204 rows)' as two rows.",
+    "split_architecture": "Single dataset + boundary metadata, not 3 physical files. Reason: lookback windows at val/test boundaries should still read from preceding (training) rows (predictor-only access — labels are NOT used)."
+  },
+
+  "known_limitations": {
+    "cdc_2002_summer_reporting_gap": {
+      "description": "CDC FluView (via Delphi API) does not report ILI for MMWR weeks W21-W39 of 2002 (19 weeks). This is a one-off anomaly likely tied to ILINet's early-program operation; year-round reporting is consistent from 2003 onward.",
+      "row_impact": "Train period 868 rows = 16 full seasons (52-53 weeks each, 2002-03 ~ 2017-18) + 2001-02 partial (33 weeks: W40-2001 ~ W20-2002). The 2001-02 season is the only partial season.",
+      "gap_count": "Exactly 1 epiweek gap in train: 200220 -> 200240 (W20-2002 -> W40-2002, 19 missing weeks).",
+      "downstream_implication": "Loader (M1.3) must handle one cross-gap window — either skip across the gap or apply a begin-offset at 2002-W40.",
+      "verification": "src/data/validate_dataset.py T10 asserts the train gap set equals exactly [(200220, 200240)] and that val/test/covid_excluded are contiguous."
+    },
+    "noaa_ncei_publish_lag_for_2025": {
+      "description": "NOAA NCEI ISD global-hourly archive lags real time by approximately 6-9 months for QC and aggregation. As of 2026-05-17, the latest 2025 hourly observation across our 10 stations is 2025-08-27. The 2024-25 ILI season therefore terminates at MMWR W35-2025 in our merged dataset, even though CDC has data through W39-2025.",
+      "row_impact": "Test period W40-2020 ~ W35-2025 = 257 rows = 4 full seasons (2020-21 has 53 weeks due to W53-2020) + 2024-25 partial (48 of 52 weeks). PLAN-stated W40-2020 ~ W39-2025 would yield 260 rows.",
+      "rebuild_plan": "Re-running download_noaa_isd.py + parse_isd + build_env_weekly + build_merged_weekly + build_splits is idempotent and will pick up newer NCEI data once published. Suggested cadence: re-check NCEI every 2-3 months until W39-2025 is available."
+    }
+  },
+
+  "credentials_status": {
+    "noaa_ncei_cdo_token": "NOT required for default bulk download path",
+    "census_api_key":      "NOT required (Census 2020 populations are hardcoded in src/data/noaa_stations.py)",
+    "delphi_epidata":      "NOT required (anonymous access)",
+    "github_pat":          "NOT required for data pipeline",
+    "note": "Credentials schema documented in config/credentials.template.json; default pipeline works with zero tokens."
+  }
+}

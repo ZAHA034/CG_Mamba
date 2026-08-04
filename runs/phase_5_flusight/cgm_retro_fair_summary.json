@@ -1,0 +1,27 @@
+{
+  "method": "CG-Mamba Method F (train-calibrated, fair)",
+  "calibration_source": "train split (2002-2018), NOT val/2018-2019",
+  "epiweeks": "common with FluSightNetwork (29 per h)",
+  "overall_wis": 0.21784700341197952,
+  "overall_cov95": 0.9120689655172414,
+  "rank": 4,
+  "total": 41,
+  "per_horizon": {
+    "1": {
+      "wis": 0.13423358387591455,
+      "cov95": 0.8827586206896552
+    },
+    "2": {
+      "wis": 0.2210845568426943,
+      "cov95": 0.896551724137931
+    },
+    "3": {
+      "wis": 0.25239494969877135,
+      "cov95": 0.8896551724137931
+    },
+    "4": {
+      "wis": 0.26367492323053787,
+      "cov95": 0.9793103448275862
+    }
+  }
+}

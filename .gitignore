@@ -1,0 +1,127 @@
+# Credentials / secrets (NEVER commit)
+config/credentials.json
+config/credentials.*.json
+config/*.local.json
+*.token
+*.key
+*.pem
+.env
+.env.*
+
+# Data — raw + processed (track only PROVENANCE.json + manifests, not bulk data)
+# NOTE: raw files live at data/raw/<source>/<station>/<year>.csv — one level deeper
+# than a single '*' matches, so these patterns must be recursive ('**').
+data/raw/**/*.csv
+data/raw/**/*.parquet
+data/raw/**/*.txt
+data/raw/**/*.gz
+data/interim/
+data/processed/*.csv
+data/processed/*.parquet
+
+# Allow PROVENANCE + manifests
+!data/raw/**/PROVENANCE.json
+!data/raw/**/MANIFEST.md
+!data/raw/**/SHA256SUMS
+!data/processed/PREPROCESSING_MANIFEST.json
+!data/processed/SHA256SUMS
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing / coverage
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.tox/
+htmlcov/
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+notebooks/.local/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs / model artifacts
+logs/
+checkpoints/
+wandb/
+mlruns/
+runs/
+*.log
+*.pt
+*.pth
+*.ckpt
+
+# OS
+Thumbs.db
+.DS_Store
+
+# ── Public code release: internal / superseded / bulk (added 2026-08) ──
+# WARNING: git only treats '#' as a comment at the START of a line. A trailing
+# '# ...' becomes part of the pattern and silently disables it. Keep comments
+# on their own lines below.
+
+# ~2.3 GB cross-domain benchmark data (regenerable, not part of the ILI paper).
+# Also a nested git repository — without this it would be committed as a broken gitlink.
+external/
+
+# internal planning doc — NOT for public release
+CG_Mamba_PLAN.md
+
+# internal paper-section drafts
+docs/
+
+# superseded draft directory
+paper/
+
+# superseded LaTeX package — CGM_v2_paper/ is the true source
+latex_submission/
+
+# scratch preflight outputs
+outputs/
+
+# analysis notebooks (clear outputs before optionally re-adding)
+notebooks/
+
+# paper LaTeX kept out of the CODE repo (author choice);
+# the two pre-registrations under it are force-added — see RELEASE_MANIFEST.md
+CGM_v2_paper/
+
+texput.log
+# NOTE: runs/ and data/processed/*.parquet are ignored above, but a curated set of SMALL canonical
+# result artifacts must ship. They are committed with `git add -f` — see RELEASE_MANIFEST.md.
+
+# cross-domain benchmark data (Whitfield 2002 cell-cycle microarray) — third-party
+# bulk data, not referenced anywhere in the ILI manuscript; same rationale as external/
+data/processed/whitfield2002/
+data/processed/**/*.npz

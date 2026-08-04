@@ -1,0 +1,33 @@
+{
+  "_schema": "normalization_params_v1",
+  "built_at": "2026-05-17T11:31:17.686867Z",
+  "method": "StandardScaler (z-score: (x - mean) / std), std = population std (ddof=0)",
+  "fit_on": "train split only \u2014 no test/val leakage",
+  "input_dataset": "data/processed/ili_env_weekly.csv",
+  "params": {
+    "ili_weighted_pct": {
+      "mean": 1.8005001650526742,
+      "std": 1.2645814654046663,
+      "fit_on": "train",
+      "fit_n_rows": 868,
+      "fit_epiweek_first": 200140,
+      "fit_epiweek_last": 201839
+    },
+    "temperature_c": {
+      "mean": 16.542015938087733,
+      "std": 7.221954031465611,
+      "fit_on": "train",
+      "fit_n_rows": 868,
+      "fit_epiweek_first": 200140,
+      "fit_epiweek_last": 201839
+    },
+    "specific_humidity_g_per_kg": {
+      "mean": 8.20797028410694,
+      "std": 3.3700305122627254,
+      "fit_on": "train",
+      "fit_n_rows": 868,
+      "fit_epiweek_first": 200140,
+      "fit_epiweek_last": 201839
+    }
+  }
+}

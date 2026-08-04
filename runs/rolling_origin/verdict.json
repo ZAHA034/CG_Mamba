@@ -1,0 +1,36 @@
+{
+  "n_strict_10of10": 4,
+  "verdict": "PARTIAL",
+  "claim": "replicates in MOST origins; name the weaker cutoffs (conditional claim)",
+  "per_cutoff_cg_wins": {
+    "2015": {
+      "strict": 10,
+      "clear": 8
+    },
+    "2016": {
+      "strict": 9,
+      "clear": 9
+    },
+    "2017": {
+      "strict": 9,
+      "clear": 9
+    },
+    "2018": {
+      "strict": 9,
+      "clear": 8
+    },
+    "2022": {
+      "strict": 10,
+      "clear": 10
+    },
+    "2023": {
+      "strict": 10,
+      "clear": 10
+    },
+    "2024": {
+      "strict": 10,
+      "clear": 10
+    }
+  },
+  "prereg": "verdict table locked in cutoffs_manifest.json before results; unchanged here"
+}

@@ -1,0 +1,106 @@
+{
+  "_schema": "env_weekly_national_manifest_v1",
+  "built_at": "2026-05-28T00:14:11.382684Z",
+  "pipeline": "src.data.build_env_weekly (CG-Mamba M1.1)",
+  "source": "NOAA NCEI ISD daily \u2192 MMWR weekly \u2192 population-weighted national",
+  "n_stations_used": 10,
+  "total_population_2020": 87423790,
+  "method": "1. Per station: hourly TMP+DEW (FM-15+FM-12, QC valid) \u2192 daily mean \u2192 specific humidity via Bolton (1980) formula.\n2. Daily \u2192 weekly mean per station, keyed by MMWR (year, week).\n3. Population-weighted aggregate across 10 MSAs (Census 2020). Missing-station weights redistributed proportionally.",
+  "citations": [
+    "Bolton, D. (1980). The computation of equivalent potential temperature. Monthly Weather Review, 108(7), 1046-1053.",
+    "Shaman, J. et al. (2013). Real-time influenza forecasts during the 2012-2013 season.",
+    "Reich, N.G. et al. (2019). A collaborative multiyear, multimodel assessment of seasonal influenza forecasting in the United States. PNAS.",
+    "US Census Bureau (2021). 2020 Census Apportionment Results."
+  ],
+  "output": {
+    "path": "data/processed/env_national_weekly.csv",
+    "size_bytes": 113370,
+    "sha256": "5e53fc7f746af659750c09cb4cb4529abbc57beaa28941b51110dbd0e6c041e0",
+    "n_records": 1287,
+    "date_first": "2000-12-31",
+    "date_last": "2025-08-24"
+  },
+  "columns": [
+    "date",
+    "year",
+    "week",
+    "epiweek",
+    "temperature_c",
+    "specific_humidity_g_per_kg",
+    "n_stations_available",
+    "weight_sum_raw",
+    "n_daily_obs_mean"
+  ],
+  "stations_used": [
+    {
+      "isd_id": "72503014732",
+      "short_name": "New York",
+      "iata": "LGA",
+      "pop2020": 20140470,
+      "weight": 0.23037745217863467
+    },
+    {
+      "isd_id": "72295023174",
+      "short_name": "Los Angeles",
+      "iata": "LAX",
+      "pop2020": 13200998,
+      "weight": 0.1510000653140295
+    },
+    {
+      "isd_id": "72530094846",
+      "short_name": "Chicago",
+      "iata": "ORD",
+      "pop2020": 9618502,
+      "weight": 0.1100215627805658
+    },
+    {
+      "isd_id": "72259003927",
+      "short_name": "Dallas",
+      "iata": "DFW",
+      "pop2020": 7637387,
+      "weight": 0.08736051136652849
+    },
+    {
+      "isd_id": "72243012960",
+      "short_name": "Houston",
+      "iata": "IAH",
+      "pop2020": 7122240,
+      "weight": 0.08146798485858368
+    },
+    {
+      "isd_id": "72405013743",
+      "short_name": "Washington",
+      "iata": "DCA",
+      "pop2020": 6385162,
+      "weight": 0.07303689304707563
+    },
+    {
+      "isd_id": "72408013739",
+      "short_name": "Philadelphia",
+      "iata": "PHL",
+      "pop2020": 6245051,
+      "weight": 0.07143422860070468
+    },
+    {
+      "isd_id": "72202012839",
+      "short_name": "Miami",
+      "iata": "MIA",
+      "pop2020": 6138333,
+      "weight": 0.07021353112236384
+    },
+    {
+      "isd_id": "72219013874",
+      "short_name": "Atlanta",
+      "iata": "ATL",
+      "pop2020": 6089815,
+      "weight": 0.06965855632660171
+    },
+    {
+      "isd_id": "72278023183",
+      "short_name": "Phoenix",
+      "iata": "PHX",
+      "pop2020": 4845832,
+      "weight": 0.05542921440491198
+    }
+  ]
+}

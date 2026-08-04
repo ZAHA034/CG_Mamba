@@ -1,0 +1,72 @@
+{
+  "protocol": "Option \u03b2 \u2014 Base 2 global top-3 from E HPO Stage B 5-seed eval",
+  "selected_at": "2026-05-26",
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1024
+  ],
+  "cells": [
+    {
+      "rank": 1,
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.01_se0.01_e0.001",
+      "base_gate_lr": 0.001,
+      "base_backbone_lr": 0.0001,
+      "base_lookback": 104,
+      "hmm_lr_ratio": 0.01,
+      "state_embed_lr_ratio": 0.01,
+      "env_lr_ratio": 0.001,
+      "stage_b_mean_val_avg": 0.3461,
+      "stage_b_mean_test_strict_avg": 0.3875,
+      "out_subdir": "cg_mamba_top1"
+    },
+    {
+      "rank": 2,
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.01_se0.001_e0.001",
+      "base_gate_lr": 0.001,
+      "base_backbone_lr": 0.0001,
+      "base_lookback": 104,
+      "hmm_lr_ratio": 0.01,
+      "state_embed_lr_ratio": 0.001,
+      "env_lr_ratio": 0.001,
+      "stage_b_mean_val_avg": 0.3467,
+      "stage_b_mean_test_strict_avg": 0.3854,
+      "out_subdir": "cg_mamba_top2"
+    },
+    {
+      "rank": 3,
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.001_se0.1_e0.1",
+      "base_gate_lr": 0.001,
+      "base_backbone_lr": 0.0001,
+      "base_lookback": 104,
+      "hmm_lr_ratio": 0.001,
+      "state_embed_lr_ratio": 0.1,
+      "env_lr_ratio": 0.1,
+      "stage_b_mean_val_avg": 0.3469,
+      "stage_b_mean_test_strict_avg": 0.3774,
+      "out_subdir": "cg_mamba_top3"
+    }
+  ],
+  "run_results": [
+    {
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.01_se0.01_e0.001",
+      "status": "ok",
+      "elapsed_sec": 194.473635,
+      "summary_path": "/A.I_DATA/jbnu/JeongHa/CG_Mamba/runs/m2_1_final_topk/cg_mamba_top1/final_summary.json"
+    },
+    {
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.01_se0.001_e0.001",
+      "status": "ok",
+      "elapsed_sec": 3.429713,
+      "summary_path": "/A.I_DATA/jbnu/JeongHa/CG_Mamba/runs/m2_1_final_topk/cg_mamba_top2/final_summary.json"
+    },
+    {
+      "cell": "hpo_p2_g1e-03_b1e-04_lb104_h0.001_se0.1_e0.1",
+      "status": "ok",
+      "elapsed_sec": 3.409906,
+      "summary_path": "/A.I_DATA/jbnu/JeongHa/CG_Mamba/runs/m2_1_final_topk/cg_mamba_top3/final_summary.json"
+    }
+  ]
+}

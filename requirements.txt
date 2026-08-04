@@ -1,0 +1,25 @@
+# CG-Mamba (v2.0.9) — explicit third-party dependency manifest.
+# Versions reflect the environment in which M1.4c verification (108 tests PASS,
+# Stage 1 cross-seed κ_min = 1.000) was completed (2026-05-19).
+# Use `>=` lower bounds for forward compatibility; pin only if a future minor
+# release breaks a contract.
+
+# ── Numerical / array core ──
+numpy>=1.24
+pandas>=2.0
+
+# ── Deep learning ──
+torch>=2.0
+
+# ── HMM / metrics (M1.4c — review I-1 fix: sklearn dependency made explicit) ──
+scikit-learn>=1.3
+
+# ── Backbone tensor ops ──
+einops>=0.7
+
+# ── Data ingestion (M1.1 only; not required at inference time) ──
+epiweeks>=2.3
+requests>=2.28
+
+# ── Test environment ──
+pytest>=8.0

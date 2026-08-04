@@ -1,0 +1,64 @@
+{
+  "_schema": "ili_env_weekly_manifest_v1",
+  "built_at": "2026-05-17T11:29:46.219773Z",
+  "pipeline": "src.data.build_merged_weekly (CG-Mamba M1.1)",
+  "join": {
+    "key": "epiweek",
+    "how": "inner",
+    "date_alignment_verified": "CDC MMWR Sunday == NOAA MMWR Sunday for all joined rows"
+  },
+  "sources": {
+    "cdc_ilinet": {
+      "path": "data/raw/cdc_ilinet/national_weekly.csv",
+      "n_records": 1233,
+      "epiweek_first": 200140,
+      "epiweek_last": 202539
+    },
+    "env_national_weekly": {
+      "path": "data/processed/env_national_weekly.csv",
+      "n_records": 1287,
+      "epiweek_first": 200101,
+      "epiweek_last": 202535
+    }
+  },
+  "output": {
+    "path": "data/processed/ili_env_weekly.csv",
+    "size_bytes": 135265,
+    "sha256": "fb0452472a936981fcb79ee8bb42ef0eb01567c2b3cb0a44250a46e278dcf0f3",
+    "n_records": 1229,
+    "epiweek_first": 200140,
+    "epiweek_last": 202535,
+    "date_first": "2001-09-30",
+    "date_last": "2025-08-24"
+  },
+  "columns": [
+    "date",
+    "year",
+    "week",
+    "epiweek",
+    "ili_weighted_pct",
+    "ili_unweighted_pct",
+    "total_ili_count",
+    "num_providers",
+    "num_patients",
+    "temperature_c",
+    "specific_humidity_g_per_kg",
+    "n_stations_available",
+    "weight_sum_raw"
+  ],
+  "target_column": "ili_weighted_pct",
+  "predictor_columns": [
+    "temperature_c",
+    "specific_humidity_g_per_kg"
+  ],
+  "auxiliary_columns": [
+    "ili_unweighted_pct",
+    "total_ili_count",
+    "num_providers",
+    "num_patients"
+  ],
+  "diagnostic_columns": [
+    "n_stations_available",
+    "weight_sum_raw"
+  ]
+}

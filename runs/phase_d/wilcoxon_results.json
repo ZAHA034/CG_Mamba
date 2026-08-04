@@ -1,0 +1,58 @@
+{
+  "patchtst": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.36829860366571743,
+    "diff": -0.07848241333715317,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "vanilla_mamba": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.37145132616861487,
+    "diff": -0.08163513584005061,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "cg_mamba": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.37290392740579986,
+    "diff": -0.0830877370772356,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "epideep": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.3939222790961246,
+    "diff": -0.10410608876756033,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "lstm": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.44764212994572716,
+    "diff": -0.1578259396171629,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "itransformer": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.5211508875997101,
+    "diff": -0.2313346972711458,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  },
+  "timesnet": {
+    "method_f_mean": 0.28981619032856426,
+    "baseline_mean": 0.596612509745549,
+    "diff": -0.30679631941698476,
+    "p_value": 0.03125,
+    "n_pairs": 5,
+    "p_value_bonferroni": 0.21875
+  }
+}

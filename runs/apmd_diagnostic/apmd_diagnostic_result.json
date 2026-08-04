@@ -1,0 +1,42 @@
+{
+  "R_h": {
+    "national": {
+      "1": 0.06288196686335991,
+      "2": 0.18480680552232562,
+      "3": 0.2953346347319782,
+      "4": 0.3938016493000948
+    },
+    "REGIONAL(pooled)": {
+      "1": 0.17899537544243638,
+      "2": 0.5166677746632911,
+      "3": 0.8699447895482344,
+      "4": 1.1741739857923144
+    }
+  },
+  "per_phase_regional": {
+    "0": {
+      "emp_resid_var": 0.9396620391835384,
+      "emission_var": 1.3407164058896743,
+      "ratio": 0.7008656230770863,
+      "n": 15585
+    },
+    "1": {
+      "emp_resid_var": 0.8684761376081714,
+      "emission_var": 1.1683988600365296,
+      "ratio": 0.7433045061179012,
+      "n": 6038
+    },
+    "2": {
+      "emp_resid_var": 0.6018447387269436,
+      "emission_var": 0.8623115124611589,
+      "ratio": 0.6979435274025203,
+      "n": 8477
+    }
+  },
+  "consistent_horizons_regional": [
+    3,
+    4
+  ],
+  "R_h_grows_with_horizon": true,
+  "licensed_wording": "empirically consistent at short horizons, under-estimating at longer horizons (NOT 'by construction'; professor-gated)"
+}

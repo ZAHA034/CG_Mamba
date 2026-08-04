@@ -1,0 +1,107 @@
+{
+  "_schema": "noaa_isd_download_manifest_v1",
+  "downloaded_at": "2026-05-26T17:49:07.666970Z",
+  "source": "NOAA NCEI Integrated Surface Database (ISD), Global Hourly",
+  "base_url": "https://www.ncei.noaa.gov/data/global-hourly/access/{YEAR}/{ISD_ID}.csv",
+  "license": "Public domain (US federal government work, 17 USC \u00a7105)",
+  "n_stations": 10,
+  "n_years_requested": 1,
+  "n_files_ok": 0,
+  "n_files_skipped": 0,
+  "n_files_not_found": 10,
+  "n_files_failed": 0,
+  "total_bytes": 0,
+  "elapsed_sec": 2.8,
+  "files": [
+    {
+      "isd_id": "72202012839",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72202012839.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72202012839 has no data for year 2026"
+    },
+    {
+      "isd_id": "72219013874",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72219013874.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72219013874 has no data for year 2026"
+    },
+    {
+      "isd_id": "72243012960",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72243012960.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72243012960 has no data for year 2026"
+    },
+    {
+      "isd_id": "72259003927",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72259003927.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72259003927 has no data for year 2026"
+    },
+    {
+      "isd_id": "72278023183",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72278023183.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72278023183 has no data for year 2026"
+    },
+    {
+      "isd_id": "72295023174",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72295023174.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72295023174 has no data for year 2026"
+    },
+    {
+      "isd_id": "72405013743",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72405013743.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72405013743 has no data for year 2026"
+    },
+    {
+      "isd_id": "72408013739",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72408013739.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72408013739 has no data for year 2026"
+    },
+    {
+      "isd_id": "72503014732",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72503014732.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72503014732 has no data for year 2026"
+    },
+    {
+      "isd_id": "72530094846",
+      "year": 2026,
+      "status": "not_found",
+      "url": "https://www.ncei.noaa.gov/data/global-hourly/access/2026/72530094846.csv",
+      "http_status": 404,
+      "attempt": 1,
+      "note": "Station 72530094846 has no data for year 2026"
+    }
+  ]
+}
