@@ -1,8 +1,8 @@
-# CG-Mamba: A Context-Gated Selective State-Space Model with Native Calibration for Influenza-Like Illness Forecasting
+# CG-Mamba: A Selective State-Space Model with Native, Recalibration-Free Prediction Intervals for Influenza-Like Illness Forecasting
 
 Reference implementation and reproduction code for the paper
 
-> **CG-Mamba: A Context-Gated Selective State-Space Model with Native Calibration for Influenza-Like Illness Forecasting**
+> **CG-Mamba: A Selective State-Space Model with Native, Recalibration-Free Prediction Intervals for Influenza-Like Illness Forecasting**
 > JeongHa Park and Jaehyuk Cho (corresponding), Jeonbuk National University.
 > Submitted to *IEEE Journal of Biomedical and Health Informatics* (2026).
 
@@ -174,7 +174,7 @@ tracked so the paper's numbers can be inspected without re-running training.
 ```bibtex
 @article{park2026cgmamba,
   author  = {Park, JeongHa and Cho, Jaehyuk},
-  title   = {{CG-Mamba}: A Context-Gated Selective State-Space Model with Native Calibration
+  title   = {{CG-Mamba}: A Selective State-Space Model with Native, Recalibration-Free Prediction Intervals
              for Influenza-Like Illness Forecasting},
   journal = {IEEE Journal of Biomedical and Health Informatics},
   year    = {2026},

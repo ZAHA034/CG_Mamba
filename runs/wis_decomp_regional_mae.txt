@@ -1,0 +1,23 @@
+=== (A) Regional test_strict MAE per model (mean over 10 regions x 5 seeds) ===
+                tS_h1   tS_h2   tS_h3   tS_h4  avg_h1_4
+baseline                                               
+cg_mamba       0.2723  0.4607  0.6014  0.7192    0.5134
+dlinear        0.2663  0.4836  0.6739  0.8350    0.5647
+epideep        0.3490  0.5332  0.6975  0.8353    0.6037
+lstm           0.3185  0.4876  0.6036  0.6888    0.5246
+patchtst       0.3793  0.5066  0.6006  0.6700    0.5391
+vanilla_mamba  0.4126  0.5514  0.6728  0.7637    0.6001
+[gate] CG h1=0.2723 vs DLinear h1=0.2663  (DLinear lead 2.2%)
+
+[CG canonical regional] WIS=0.3935  Cov95=0.9542  (paper 0.393 / 0.954)
+
+=== (B) WIS decomposition per model, regional test_strict (native predictive dump) ===
+model              WIS   Cov95 |    disp   under    over | disp% under% over%
+cg_mamba        0.3952  0.9533 |  0.2308  0.0451  0.1193 | 58.4 11.4 30.2
+dlinear         0.5075  0.2961 |  0.0417  0.1121  0.3536 |  8.2 22.1 69.7
+epideep         0.5144  0.3824 |  0.0583  0.1077  0.3484 | 11.3 20.9 67.7
+lstm            0.4159  0.5138 |  0.0652  0.0864  0.2643 | 15.7 20.8 63.5
+patchtst        0.4230  0.6956 |  0.0818  0.0687  0.2725 | 19.3 16.2 64.4
+vanilla_mamba   0.4631  0.5720 |  0.0742  0.1039  0.2851 | 16.0 22.4 61.6
+
+[gate] native CG WIS=0.3952 (canon 0.3935), Cov95=0.9533 (canon 0.9542) -> PASS
