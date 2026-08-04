@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
 P3 Table I verification: extract Table I (tab:national) values from
-latex_submission/tex/results_main.tex and compare against on-disk artifacts.
+CGM_v2_paper/tex/results_main.tex and compare against on-disk artifacts.
+
+Author-side check. The manuscript LaTeX source is not part of the public code
+repository, so this script reports that and exits cleanly when it is absent.
 
 Goal: close file-version-mismatch risk identified in P3 audit. Extraction was
 HIGH-confidence on results_main.tex, but the paper may have been edited after
@@ -17,8 +20,8 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path("/A.I_DATA/jbnu/JeongHa/CG_Mamba")
-TEX  = ROOT / "latex_submission/tex/results_main.tex"
+ROOT = Path(__file__).resolve().parents[1]
+TEX  = ROOT / "CGM_v2_paper/tex/results_main.tex"
 RUNS = ROOT / "runs"
 
 TOL = 0.002  # 3-decimal rounding tolerance
@@ -237,6 +240,12 @@ def build_disk_table():
 # 4. Compare and print
 # ---------------------------------------------------------------------------
 def main():
+    if not TEX.exists():
+        print(f"Manuscript LaTeX source not found: {TEX}")
+        print("This is an author-side check against the paper source, which is not")
+        print("shipped in the public code repository. Nothing to verify; exiting.")
+        return 0
+
     tex_rows = parse_table_i(TEX)
     disk     = build_disk_table()
 

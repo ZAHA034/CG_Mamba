@@ -19,7 +19,7 @@ matplotlib.rcParams.update({
     "axes.linewidth": 0.6,
 })
 
-ROOT = Path("/A.I_DATA/jbnu/JeongHa/CG_Mamba")
+ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "CGM_v2_paper" / "figures"
 res = json.load(open(ROOT / "runs/ablation_retrain/bootstrap_ci.json"))["results"]
 

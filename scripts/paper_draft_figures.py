@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
-ROOT = Path("/A.I_DATA/jbnu/JeongHa/CG_Mamba")
+ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "runs" / "figures" / "paper_drafts"
 OUT.mkdir(parents=True, exist_ok=True)
 

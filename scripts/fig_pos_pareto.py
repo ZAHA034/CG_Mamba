@@ -15,7 +15,7 @@ import numpy as np, pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-_ROOT = Path("/A.I_DATA/jbnu/JeongHa/CG_Mamba")
+_ROOT = Path(__file__).resolve().parents[1]
 plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],

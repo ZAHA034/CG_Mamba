@@ -4,7 +4,10 @@ p3_table_iv_verification.py
 ===========================
 
 Verify Table IV (label: tab:regional_h1) numbers in
-latex_submission/tex/results_main.tex against disk artifacts under runs/.
+CGM_v2_paper/tex/results_main.tex against disk artifacts under runs/.
+
+Author-side check. The manuscript LaTeX source is not part of the public code
+repository, so this script reports that and exits cleanly when it is absent.
 
 Table IV reports cross-region WIS and Cov95, h=1..4 average across 10 HHS regions,
 with cross-region std. Rows: SARIMAX, CG-Mamba (APMD), LSTM (MCD d=0.3),
@@ -40,9 +43,9 @@ import sys
 from pathlib import Path
 from statistics import mean, pstdev, stdev
 
-ROOT = Path("/A.I_DATA/jbnu/JeongHa/CG_Mamba")
+ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / "runs"
-TEX = ROOT / "latex_submission" / "tex" / "results_main.tex"
+TEX = ROOT / "CGM_v2_paper" / "tex" / "results_main.tex"
 TOL = 0.005
 
 # ---------- LaTeX values (from results_main.tex Table IV) ----------

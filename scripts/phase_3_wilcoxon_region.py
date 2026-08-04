@@ -23,13 +23,14 @@ import json
 import os
 import sys
 import warnings
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from scipy.stats import wilcoxon
 
 # ── paths ──────────────────────────────────────────────────────────────────
-ROOT = "/A.I_DATA/jbnu/JeongHa/CG_Mamba"
+ROOT = str(Path(__file__).resolve().parents[1])
 EVAL_CSV = os.path.join(ROOT, "runs/phase_3_region_eval.csv")
 DLINEAR_CSV = os.path.join(ROOT, "runs/phase_3_dlinear_mae_region.csv")
 OUT_JSON = os.path.join(ROOT, "runs/phase_3_wilcoxon_region.json")

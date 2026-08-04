@@ -1,0 +1,2386 @@
+{
+  "threshold": 100000000.0,
+  "n_cells": 35,
+  "cells": [
+    {
+      "size": "seasons_3_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_3_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 7409.4665548483845,
+            "eig_min": 0.00020274962100318784,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 289.7057605360383,
+            "eig_min": 0.005202749621003189,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 30.919950551511143,
+            "eig_min": 0.0502027496210032,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 783.8263255393745,
+            "eig_min": 0.00015331810573016933,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.290130142354204,
+            "eig_min": 0.00515331810573017,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.3930909036643198,
+            "eig_min": 0.05015331810573018,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 262.92387467080994,
+            "eig_min": 0.0003749073893621006,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.2695605618788,
+            "eig_min": 0.005374907389362108,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.949327575045383,
+            "eig_min": 0.05037490738936211,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_3_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_3_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 208.0121247967839,
+            "eig_min": 0.00043434321548941327,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.545571077154204,
+            "eig_min": 0.005434343215489413,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.7827993029542664,
+            "eig_min": 0.05043434321548943,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 7345.945914768977,
+            "eig_min": 0.00020776980081572903,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 294.0348321991511,
+            "eig_min": 0.005207769800815735,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.394856329369375,
+            "eig_min": 0.05020776980081573,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 97.41760049396834,
+            "eig_min": 0.001142246294661268,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 18.930353427880437,
+            "eig_min": 0.0061422462946612725,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.153457364188211,
+            "eig_min": 0.051142246294661305,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_3_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_3_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 7409.4689853579075,
+            "eig_min": 0.00020274946768020216,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 289.70564543565695,
+            "eig_min": 0.005202749467680204,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 30.919937832760354,
+            "eig_min": 0.050202749467680226,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 262.923613834761,
+            "eig_min": 0.00037490811955287565,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.26957546903188,
+            "eig_min": 0.005374908119552875,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.9493294021745022,
+            "eig_min": 0.05037490811955289,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 783.8275337624711,
+            "eig_min": 0.00015331796607028275,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.290145504412088,
+            "eig_min": 0.005153317966070284,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.393092423944409,
+            "eig_min": 0.05015331796607028,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_3_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_3_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 262.92372375622375,
+            "eig_min": 0.0003749078054611868,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.269568897888266,
+            "eig_min": 0.005374907805461186,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.94932859928778,
+            "eig_min": 0.05037490780546121,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 7409.468313150595,
+            "eig_min": 0.00020274950903728827,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 289.70567583553003,
+            "eig_min": 0.005202749509037284,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 30.9199411964316,
+            "eig_min": 0.05020274950903728,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 783.8271765817104,
+            "eig_min": 0.00015331803767474402,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.290145431451737,
+            "eig_min": 0.005153318037674744,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.393092446282599,
+            "eig_min": 0.050153318037674754,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_3_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_3_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 783.7815378053684,
+            "eig_min": 0.00015332511563794906,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.28983076170654,
+            "eig_min": 0.005153325115637948,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.3930630626490013,
+            "eig_min": 0.050153325115637956,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 262.93552994356423,
+            "eig_min": 0.00037487438255570497,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.26887719937846,
+            "eig_min": 0.005374874382555706,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.9492439685566443,
+            "eig_min": 0.0503748743825557,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 7409.379199391779,
+            "eig_min": 0.0002027550677767723,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 289.709809922032,
+            "eig_min": 0.005202755067776776,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 30.92039828612621,
+            "eig_min": 0.050202755067776765,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_4_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_4_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 858.9105132951232,
+            "eig_min": 0.00015776543283178181,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 27.24171750800821,
+            "eig_min": 0.005157765432831779,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.6984580013276673,
+            "eig_min": 0.0501577654328318,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 167.14530722598843,
+            "eig_min": 0.0005622992194803392,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.795820017432074,
+            "eig_min": 0.005562299219480345,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.847688455937563,
+            "eig_min": 0.05056229921948031,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6440.429974626544,
+            "eig_min": 0.00020113185988769247,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 250.01782194792742,
+            "eig_min": 0.005201131859887695,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.799707684441533,
+            "eig_min": 0.05020113185988771,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_4_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_4_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 167.14502488402223,
+            "eig_min": 0.0005622842738175214,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.795390179004553,
+            "eig_min": 0.005562284273817522,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.847636751523942,
+            "eig_min": 0.050562284273817544,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 858.8892480512358,
+            "eig_min": 0.00015776808276372152,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 27.24149432793615,
+            "eig_min": 0.005157768082763722,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.6984362953575145,
+            "eig_min": 0.05015776808276373,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6440.48925593433,
+            "eig_min": 0.0002011322639000359,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 250.02059526454815,
+            "eig_min": 0.005201132263900035,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.799996812769365,
+            "eig_min": 0.050201132263900036,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_4_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_4_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 6440.430716647447,
+            "eig_min": 0.0002011318644927642,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 250.0178561234339,
+            "eig_min": 0.005201131864492765,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.79971124570085,
+            "eig_min": 0.050201131864492744,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 858.9102474265977,
+            "eig_min": 0.00015776547129897297,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 27.24171557831389,
+            "eig_min": 0.005157765471298974,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.698457820951459,
+            "eig_min": 0.05015776547129898,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 167.14530330844693,
+            "eig_min": 0.0005622990097023936,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.795813988799228,
+            "eig_min": 0.005562299009702402,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.847687730716449,
+            "eig_min": 0.0505622990097024,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_4_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_4_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 858.9099758400769,
+            "eig_min": 0.00015776550163388765,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 27.241712162418036,
+            "eig_min": 0.005157765501633889,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.6984574839307203,
+            "eig_min": 0.0501577655016339,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 167.14529995344242,
+            "eig_min": 0.0005622988338697869,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.795808928476976,
+            "eig_min": 0.005562298833869793,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8476871220536064,
+            "eig_min": 0.050562298833869805,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6440.431473146972,
+            "eig_min": 0.00020113186993891513,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 250.0178918599035,
+            "eig_min": 0.005201131869938914,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.79971497242502,
+            "eig_min": 0.0502011318699389,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_4_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_4_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 6440.426750511628,
+            "eig_min": 0.0002011318377583114,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 250.01767093038302,
+            "eig_min": 0.005201131837758312,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.799691939739997,
+            "eig_min": 0.05020113183775832,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 167.1453224441667,
+            "eig_min": 0.0005623000235534519,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.795843145470464,
+            "eig_min": 0.005562300023553448,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8476912379407366,
+            "eig_min": 0.05056230002355345,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 858.9116700069792,
+            "eig_min": 0.00015776529077681837,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 27.24172998362473,
+            "eig_min": 0.005157765290776818,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.6984592175274855,
+            "eig_min": 0.05015776529077681,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_5_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_5_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 6517.409870540319,
+            "eig_min": 0.0001874272393172621,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 236.4447890927674,
+            "eig_min": 0.005187427239317262,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 25.33583029612468,
+            "eig_min": 0.05018742723931726,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 203.9913159015945,
+            "eig_min": 0.00045232863057631046,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.840287914000196,
+            "eig_min": 0.005452328630576309,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8199117153336983,
+            "eig_min": 0.05045232863057631,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 107.26782761687059,
+            "eig_min": 0.0010368069462260276,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.251241561136975,
+            "eig_min": 0.00603680694622602,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.1588188686962537,
+            "eig_min": 0.051036806946226025,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_5_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_5_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 107.26903167591881,
+            "eig_min": 0.0010368202633873364,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.25164252120996,
+            "eig_min": 0.006036820263387339,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.158870494743265,
+            "eig_min": 0.051036820263387316,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 6517.367682889881,
+            "eig_min": 0.00018742680761906367,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 236.4427421091002,
+            "eig_min": 0.005187426807619066,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 25.33561690177497,
+            "eig_min": 0.05018742680761907,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 204.00196050211827,
+            "eig_min": 0.00045232440338611855,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.841026666224618,
+            "eig_min": 0.0054523244033861185,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8199902929382223,
+            "eig_min": 0.05045232440338613,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_5_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_5_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 142.76693967501856,
+            "eig_min": 0.0006478909758689139,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.262622859476654,
+            "eig_min": 0.005647890975868916,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8134915220015633,
+            "eig_min": 0.05064789097586892,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 801.828765205931,
+            "eig_min": 0.00015422583380093725,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.962567421028098,
+            "eig_min": 0.005154225833800937,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.4625738308659595,
+            "eig_min": 0.05015422583380095,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6305.036641412182,
+            "eig_min": 0.00018973378352663288,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 231.47207686496566,
+            "eig_min": 0.005189733783526632,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 24.831342254663287,
+            "eig_min": 0.050189733783526626,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_5_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_5_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 801.809945531134,
+            "eig_min": 0.0001542275823916692,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 24.962267843276184,
+            "eig_min": 0.005154227582391669,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.4625437935730927,
+            "eig_min": 0.050154227582391686,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 6305.075348962999,
+            "eig_min": 0.0001897346776465771,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 231.47453838962636,
+            "eig_min": 0.005189734677646579,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 24.831600463270618,
+            "eig_min": 0.050189734677646564,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 142.76397525336589,
+            "eig_min": 0.0006478858978869038,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.262169961579186,
+            "eig_min": 0.005647885897886898,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8134395694268246,
+            "eig_min": 0.05064788589788689,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_5_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_5_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 107.26778707585194,
+            "eig_min": 0.001036806498266755,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.25122806707554,
+            "eig_min": 0.006036806498266747,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.158817131326817,
+            "eig_min": 0.05103680649826678,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 6517.411290504114,
+            "eig_min": 0.00018742725383536665,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 236.44485797616548,
+            "eig_min": 0.005187427253835365,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 25.335837477056998,
+            "eig_min": 0.05018742725383536,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 203.9909579053299,
+            "eig_min": 0.0004523287727554051,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 17.840263068611762,
+            "eig_min": 0.005452328772755406,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.8199090726480973,
+            "eig_min": 0.050452328772755406,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_7_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_7_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 115.88150462482648,
+            "eig_min": 0.0009573101186801735,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.46088664776698,
+            "eig_min": 0.005957310118680171,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.1582227666729588,
+            "eig_min": 0.050957310118680155,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 191.75770714634973,
+            "eig_min": 0.0004380373612083411,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 16.365654392998422,
+            "eig_min": 0.00543803736120834,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.656666417651003,
+            "eig_min": 0.05043803736120834,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6392.556758766943,
+            "eig_min": 0.00017828429206829226,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 221.0563174363552,
+            "eig_min": 0.005178284292068292,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 23.709309176822433,
+            "eig_min": 0.0501782842920683,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_7_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_7_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 6392.513815100817,
+            "eig_min": 0.0001782845198106021,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 221.05511034178403,
+            "eig_min": 0.005178284519810601,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 23.70918550310725,
+            "eig_min": 0.050178284519810594,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 115.88306185748482,
+            "eig_min": 0.0009573118321254926,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.461164620240552,
+            "eig_min": 0.005957311832125498,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.158255812027364,
+            "eig_min": 0.05095731183212551,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 191.76086609669034,
+            "eig_min": 0.00043803604634186545,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 16.365866439586156,
+            "eig_min": 0.005438036046341866,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.656688922323824,
+            "eig_min": 0.05043803604634186,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_7_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_7_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 191.75729613561026,
+            "eig_min": 0.0004380375322975919,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 16.36562680392165,
+            "eig_min": 0.005438037532297593,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.656663489603408,
+            "eig_min": 0.05043803753229758,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 6392.562293494755,
+            "eig_min": 0.00017828426301264228,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 221.0564733640465,
+            "eig_min": 0.005178284263012641,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 23.7093251539304,
+            "eig_min": 0.05017828426301265,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 115.88130423213661,
+            "eig_min": 0.0009573098959474411,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.460850840676706,
+            "eig_min": 0.005957309895947442,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.1582185092843615,
+            "eig_min": 0.050957309895947475,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_7_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_7_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 191.7573926032229,
+            "eig_min": 0.0004380374921607462,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 16.365633279927472,
+            "eig_min": 0.005438037492160747,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.6566641769126234,
+            "eig_min": 0.05043803749216075,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 115.8813551524637,
+            "eig_min": 0.0009573099483227811,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.460859871026006,
+            "eig_min": 0.005957309948322779,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.158219581759456,
+            "eig_min": 0.05095730994832279,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6392.560901132945,
+            "eig_min": 0.00017828427089281725,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 221.05643481775394,
+            "eig_min": 0.005178284270892816,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 23.709321207033184,
+            "eig_min": 0.05017828427089282,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_7_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_7_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 191.75709640969944,
+            "eig_min": 0.00043803761546835305,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 16.36561339834995,
+            "eig_min": 0.005438037615468355,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.6566620668712475,
+            "eig_min": 0.050438037615468355,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 115.88121328837212,
+            "eig_min": 0.0009573097878988157,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.460834477677793,
+            "eig_min": 0.005957309787898821,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.158216561753556,
+            "eig_min": 0.05095730978789881,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 6392.56482861617,
+            "eig_min": 0.00017828425064474307,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 221.05654590615652,
+            "eig_min": 0.005178284250644743,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 23.709332591468392,
+            "eig_min": 0.050178284250644745,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_10_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_10_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 906.7015937158311,
+            "eig_min": 0.001628773523320962,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 223.54234070360678,
+            "eig_min": 0.00662877352332095,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 29.572880492843655,
+            "eig_min": 0.05162877352332099,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 239.63985633849111,
+            "eig_min": 0.0004250419267349943,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.69698809773447,
+            "eig_min": 0.005425041926734994,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.011539117433954,
+            "eig_min": 0.050425041926735,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 125.34524941592248,
+            "eig_min": 0.0012048662922082064,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 25.145467857317787,
+            "eig_min": 0.006204866292208202,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.92588205899223,
+            "eig_min": 0.0512048662922082,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_10_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_10_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 2069.5565773793514,
+            "eig_min": 0.0001470269672036658,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 60.08917944265487,
+            "eig_min": 0.005147026967203668,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.064838106159027,
+            "eig_min": 0.05014702696720368,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 530.9218380021936,
+            "eig_min": 0.004173562418362044,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 242.09083983866316,
+            "eig_min": 0.009173562418362022,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 41.82548329894709,
+            "eig_min": 0.05417356241836205,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 239.47275998735594,
+            "eig_min": 0.0004281227588030276,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.80864166890591,
+            "eig_min": 0.005428122758803029,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.024576968559407,
+            "eig_min": 0.05042812275880304,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_10_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_10_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 125.34503276250055,
+            "eig_min": 0.0012048663762851115,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 25.145427145089386,
+            "eig_min": 0.006204866376285108,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.9258771604371137,
+            "eig_min": 0.0512048663762851,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 906.7018379013841,
+            "eig_min": 0.0016287725816816038,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 223.5423036579997,
+            "eig_min": 0.0066287725816816054,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 29.572872198705344,
+            "eig_min": 0.051628772581681616,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 239.63951897651464,
+            "eig_min": 0.00042504202806618174,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.696965774230584,
+            "eig_min": 0.005425042028066181,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.0115367492616008,
+            "eig_min": 0.05042504202806619,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_10_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_10_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 235.06484311867072,
+            "eig_min": 0.0004303589935365026,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.549769992504523,
+            "eig_min": 0.005430358993536504,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 2.9974458305906753,
+            "eig_min": 0.05043035899353652,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 106.07477829781288,
+            "eig_min": 0.0013084387143349693,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 22.793650386522962,
+            "eig_min": 0.006308438714334971,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.67955742310692,
+            "eig_min": 0.05130843871433498,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 780.2760220808349,
+            "eig_min": 0.0016862481655464134,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 197.5306596693942,
+            "eig_min": 0.006686248165546413,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 26.423643799397478,
+            "eig_min": 0.05168624816554642,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_10_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_10_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 2069.5583235252125,
+            "eig_min": 0.00014702696001267347,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 60.089226514577156,
+            "eig_min": 0.005147026960012675,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.064842929957564,
+            "eig_min": 0.050147026960012685,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 530.9221372547194,
+            "eig_min": 0.004173561933707845,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 242.09096072581556,
+            "eig_min": 0.009173561933707842,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 41.82550197791684,
+            "eig_min": 0.05417356193370781,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 239.47287039979418,
+            "eig_min": 0.0004281226915313556,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 19.808647654934504,
+            "eig_min": 0.005428122691531355,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 3.0245775905100936,
+            "eig_min": 0.05042812269153136,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_13_seasons",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_13_seasons/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 204.61420521280556,
+            "eig_min": 0.0027849716709431875,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 73.8403155833931,
+            "eig_min": 0.007784971670943198,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 11.742826516120488,
+            "eig_min": 0.05278497167094318,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1274.1723927516791,
+            "eig_min": 0.0010918994967673418,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 229.2007928202574,
+            "eig_min": 0.006091899496767341,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 28.209328849313856,
+            "eig_min": 0.05109189949676735,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 760.6203938034876,
+            "eig_min": 0.00040396518553678716,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 57.78426540230794,
+            "eig_min": 0.005403965185536788,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.088016928644445,
+            "eig_min": 0.050403965185536775,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_13_seasons",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_13_seasons/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 184.06022012948944,
+            "eig_min": 0.003091930801934099,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 70.94740156353306,
+            "eig_min": 0.008091930801934112,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 11.660933303382286,
+            "eig_min": 0.05309193080193417,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1307.0683568830586,
+            "eig_min": 0.0010832775267198655,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 233.57766773863517,
+            "eig_min": 0.006083277526719866,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 28.69662730883525,
+            "eig_min": 0.05108327752671987,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 717.0226914975897,
+            "eig_min": 0.0004306227308290658,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 57.77721727894692,
+            "eig_min": 0.005430622730829068,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.114055905952149,
+            "eig_min": 0.05043062273082907,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_13_seasons",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_13_seasons/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 613.7323404359438,
+            "eig_min": 0.0006799352683169382,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 74.34913315380618,
+            "eig_min": 0.00567993526831694,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 9.220577356601952,
+            "eig_min": 0.050679935268316934,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1377.5708154473125,
+            "eig_min": 0.001190796860919575,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 265.7827481169642,
+            "eig_min": 0.0061907968609195806,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 33.021697382866535,
+            "eig_min": 0.05119079686091959,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 139.4974372967414,
+            "eig_min": 0.0012394230401200597,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 28.511664729157676,
+            "eig_min": 0.006239423040120056,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 4.350094606817855,
+            "eig_min": 0.05123942304012003,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_13_seasons",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_13_seasons/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 206.60835587350874,
+            "eig_min": 0.0013838177467041574,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 45.569645158701476,
+            "eig_min": 0.006383817746704155,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 6.537239236114869,
+            "eig_min": 0.051383817746704176,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1351.889660474096,
+            "eig_min": 0.0010379684026502725,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 233.22724756618513,
+            "eig_min": 0.006037968402650275,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 28.473287572439045,
+            "eig_min": 0.05103796840265026,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 80.9422094779521,
+            "eig_min": 0.003045532946541142,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 31.261094498291165,
+            "eig_min": 0.008045532946541133,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 5.589766927778063,
+            "eig_min": 0.05304553294654113,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_13_seasons",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_13_seasons/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 623.1554119743301,
+            "eig_min": 0.0006697125256736379,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 74.48966467490271,
+            "eig_min": 0.005669712525673637,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 9.223162349771231,
+            "eig_min": 0.050669712525673635,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 3913.111695222809,
+            "eig_min": 0.00014651944458517245,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 112.37632703249352,
+            "eig_min": 0.005146519444585173,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 12.430512807027911,
+            "eig_min": 0.05014651944458518,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 427.91300621312115,
+            "eig_min": 0.005294680824590629,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 220.56660398500873,
+            "eig_min": 0.01029468082459063,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 41.87858134013719,
+            "eig_min": 0.05529468082459064,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_17_seasons_full",
+      "seed": "seed1024",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_17_seasons_full/seed1024/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 194.51780196871744,
+            "eig_min": 0.0036968147127358296,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 83.25994011883495,
+            "eig_min": 0.008696814712735826,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 14.3229403144573,
+            "eig_min": 0.053696814712735824,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1576.3236969687398,
+            "eig_min": 0.0009842040475780266,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 260.08875206715663,
+            "eig_min": 0.005984204047578024,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.41020229236808,
+            "eig_min": 0.050984204047578,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 227.40189338869516,
+            "eig_min": 0.0013814151051782721,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 50.01028850392697,
+            "eig_min": 0.006381415105178281,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.086928410357945,
+            "eig_min": 0.05138141510517827,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_17_seasons_full",
+      "seed": "seed123",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_17_seasons_full/seed123/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 1576.3236000247944,
+            "eig_min": 0.0009842040140589658,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 260.08872875050747,
+            "eig_min": 0.005984204014058964,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.410199405264517,
+            "eig_min": 0.050984204014058974,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 194.51780250352033,
+            "eig_min": 0.0036968150511042337,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 83.25994467489517,
+            "eig_min": 0.008696815051104232,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 14.322941486767348,
+            "eig_min": 0.053696815051104234,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 227.4018912900707,
+            "eig_min": 0.0013814149464912552,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 50.01028363842049,
+            "eig_min": 0.006381414946491246,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.086927673511833,
+            "eig_min": 0.05138141494649126,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_17_seasons_full",
+      "seed": "seed42",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_17_seasons_full/seed42/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 194.51780200208262,
+            "eig_min": 0.0036968147572901656,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 83.25994070299902,
+            "eig_min": 0.008696814757290169,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 14.32294046626908,
+            "eig_min": 0.053696814757290164,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 227.40189258726627,
+            "eig_min": 0.0013814150695768818,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 50.010287340784444,
+            "eig_min": 0.006381415069576871,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.086928236158252,
+            "eig_min": 0.05138141506957687,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 1576.3236851518623,
+            "eig_min": 0.000984204036748704,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 260.0887477417433,
+            "eig_min": 0.005984204036748707,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.41020173610579,
+            "eig_min": 0.050984204036748706,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_17_seasons_full",
+      "seed": "seed456",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_17_seasons_full/seed456/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 1576.3237385619489,
+            "eig_min": 0.0009842041217932422,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 260.0887752316178,
+            "eig_min": 0.005984204121793245,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.4102053441425,
+            "eig_min": 0.05098420412179324,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 227.40189913023698,
+            "eig_min": 0.0013814153175192385,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 50.010295649514084,
+            "eig_min": 0.006381415317519241,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.086929475204968,
+            "eig_min": 0.05138141531751925,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 194.5178020216451,
+            "eig_min": 0.003696814538197431,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 83.2599379084735,
+            "eig_min": 0.00869681453819743,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 14.322939732388189,
+            "eig_min": 0.05369681453819744,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    },
+    {
+      "size": "seasons_17_seasons_full",
+      "seed": "seed789",
+      "path": "runs/m2_4_data_efficiency/cg_mamba_hmm/seasons_17_seasons_full/seed789/hmm_params.npz",
+      "K": 3,
+      "V": 6,
+      "reg_covar": 0.005,
+      "phases": [
+        {
+          "phase": 0,
+          "raw": {
+            "cond": 227.40189439345153,
+            "eig_min": 0.0013814150775347186,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 50.01028795299134,
+            "eig_min": 0.0063814150775347205,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 7.086928318840358,
+            "eig_min": 0.05138141507753471,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 1,
+          "raw": {
+            "cond": 1576.323638910584,
+            "eig_min": 0.0009842040554561761,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 260.08874425131654,
+            "eig_min": 0.005984204055456175,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 31.410201410329808,
+            "eig_min": 0.050984204055456186,
+            "chol_ok": true
+          }
+        },
+        {
+          "phase": 2,
+          "raw": {
+            "cond": 194.5178024209165,
+            "eig_min": 0.0036968149016619496,
+            "chol_ok": true
+          },
+          "l1": {
+            "cond": 83.25994272797561,
+            "eig_min": 0.008696814901661945,
+            "chol_ok": true
+          },
+          "l2": {
+            "cond": 14.32294097958452,
+            "eig_min": 0.05369681490166194,
+            "chol_ok": true
+          }
+        }
+      ],
+      "n_phase_fail_raw": 0,
+      "n_phase_fail_l1": 0,
+      "n_phase_fail_guarded": 0,
+      "l2_engaged": false
+    }
+  ]
+}
