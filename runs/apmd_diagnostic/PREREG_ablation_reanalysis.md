@@ -41,6 +41,15 @@ Because the gate point estimates are ≤ 0 (ΔMAE −0.003 = an *improvement* on
 stated as **"the gate's marginal effect is bounded below the scale this paper accepts as a [metric]
 contribution,"** not as "the gate has no effect."
 
+**Protocol scope (amendment).** All Branch E/I/R claims are scoped to the **from-scratch retraining** protocol
+(Table IV). A post-hoc-disabling measurement of the same gate (ΔMAE +0.030) exists **only in the un-compiled
+`appendix.tex`** (gitignored; verified absent from the submitted PDF), and it estimates a *different* quantity —
+the trained model's inference-time reliance on the signal — versus from-scratch's "the architecture can reach
+the same accuracy without the gate." The two are complementary, not contradictory. The submitted paper's only
+"+0.030" is an unrelated tab:rolling PatchTST value. If this from-scratch-vs-post-hoc contrast is ever brought
+into the paper (it is good material for the Occam rebuttal), it must be labelled as two estimands; the divergent
+dead-appendix number is a repo-hygiene item (reconcile or delete) regardless.
+
 ## 2. Per-metric decision, using the 90% CI of the ablation Δ (= effect of REMOVING the component)
 Evaluate ΔMAE and ΔWIS **independently** (per-metric split — a narrow ΔMAE CI does not license a claim about
 ΔWIS):
@@ -88,6 +97,13 @@ The contribution's substance is the localization onto two effects — **Env → 
 entirely beyond SESOI: cleanly material) and **Rollout → calibration** (ΔCov95 −0.036, the sole Cov95 driver;
 point-material, CI straddling SESOI_Cov95 per §2). The gate's null is a subordinate, bounded observation, not
 the contribution's basis. No branch removes Contribution 3; branches change only how the gate's null is stated.
+
+**Conditionality (amendment).** This guarantee is **conditional on the recomputed −Env / −Rollout intervals** —
+the §0 switch from bootstrap to paired-t re-derives them, and this reanalysis re-examines the calibration pillar,
+not only the gate. Specifically: **if the recomputed −Rollout ΔCov95 90% interval includes 0, the
+calibration-driver claim is demoted to a descriptive observation on the same standard as the gate null, and
+§IV-H (the "single dominant driver" text) is rewritten accordingly.** Pre-committed now, before recomputation,
+so the outcome cannot be patched post-hoc.
 
 ## 6. Naming (#4)
 Decided after the table is recomposed. The effect-size table + bounded-null makes the text-handling defense
