@@ -33,10 +33,16 @@ merely statistical.
 - Same point forecast μ_CGM. Two fixed-width controls: **(V1)** √(Σ_k π_k σ²_k) (stationary HMM scale);
   **(V2)** the global training-residual 95% quantile. Both are frozen constants (generative/residual-sourced,
   no per-location calibration data — the deployability property is identical to APMD's under either control).
+  **V1 and V2 answer different questions:** V1 (same frozen HMM) tests whether the γ-weighting is needed *given*
+  the HMM — a **phase-necessity** test; V2 (residual-fit constant) tests whether a generative-sourced scale is
+  needed at all — a **generative-source / transfer** test, and the **stronger competitor** (a residual-quantile
+  constant is the best fixed width a practitioner would actually deploy). Beating V1 alone invites "you picked a
+  weak constant"; beating V2 blocks that.
   **V2 consistency check:** V2 is residual-fit, and §IV-D reports a residual-fit learned head under-covers on
   zero-shot regional transfer (0.868 vs 0.954); V2 should likewise under-cover regionally. If V2 instead transfers
   well, that tensions with §IV-D and must be investigated, not glossed.
-- Build Gaussian intervals/quantiles from μ_CGM ± the constant scale; score APMD vs V1, V2.
+- Build all 23 FluSight quantiles as $\mu_{\text{CGM}} + \Phi^{-1}(q)\cdot(\text{constant scale})$ at the same
+  levels used for APMD; score APMD vs V1, V2.
 - **High-variance cell definition (fixed, not invented):** the forecast-origin dominant phase, per §IV-C2 verbatim
   — "Conditioning on the frozen HMM's dominant phase at the forecast origin ($\arg\max\gamma_h$; states ordered by
   emission variance)"; the high-variance cell = the highest-emission-variance state (the post-COVID dominant
@@ -54,7 +60,9 @@ merely statistical.
 Decision is on the **signed high-variance-cell Cov95 gap** alone — WIS decomposition is corroboration, not part of
 the verdict (this closes the mixed-outcome hole). Threshold = **0.026** (the ablation's SESOI_Cov95 = cross-region
 Cov95 SD): the SAME threshold paper-wide, avoiding threshold-shopping — and it is the *harder* bar here (a lower
-one would only favour us). Three mutually exclusive outcomes on the signed gap:
+one would only favour us). **Boundary case:** the verdict is on distance *below* nominal in the under-covering direction; any high-variance
+cell where APMD itself over-covers is excluded from the verdict and reported separately (unlikely — high-variance
+cells all under-cover, 0.94/0.89 — but stated for completeness). Three mutually exclusive outcomes on the signed gap:
 - **APMD-WINS (predicted):** fixed-width high-variance-cell Cov95 is **≥ 0.026 further BELOW nominal** than APMD's
   (fixed under-covers the surge cells more). → confirm the *relative* claim; keep the phase-mixture structure; add
   the two-regime narrative + the width-driver clarification (width varies via γ-weighted σ²_within, CV 52%;
