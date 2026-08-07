@@ -23,33 +23,56 @@ weeks and under-cover epidemic (high-variance) weeks**.
 ## 2. Quantitative prediction (pre-specified, before scoring)
 Fixed-width variant 1 uses the stationary-weighted emission scale √(Σ_k π_k σ²_k) ≈
 √(0.52·1.907 + 0.28·0.105 + 0.20·0.179) ≈ √1.05 ≈ **1.03**. Relative to APMD it is **~25% narrower in
-high-variance weeks** (1.03 vs 1.38) and **~3.2× wider in low-variance weeks** (1.03 vs 0.32). Since APMD already
-covers only 0.94 (h=1) / 0.89 (h=4) in the high-variance state, a 25%-narrower fixed width there is predicted to
-fall **below ~0.85 at h=4**. High-variance weeks = epidemic surge = the operationally costliest cells to
-under-cover; so if confirmed, the result is an **operational** win (surge under-coverage), not merely statistical.
+high-variance weeks** (1.03 vs 1.38) and **~3.2× wider in low-variance weeks** (1.03 vs 0.32). Since APMD already covers only 0.94 (h=1) / 0.89 (h=4) in the high-variance state, and 0.89 corresponds to ±1.60σ
+of the realized error, a 25%-narrower interval (±1.20σ) is predicted to give **≈0.77 at h=4** — a ~0.12 gap, far
+above the 0.026 threshold (§4). High-variance weeks = epidemic surge = the operationally costliest cells to
+under-cover; so if confirmed, the result is an **operational** finding (fixed width under-covers the surge), not
+merely statistical.
 
 ## 3. Design (no retrain)
 - Same point forecast μ_CGM. Two fixed-width controls: **(V1)** √(Σ_k π_k σ²_k) (stationary HMM scale);
   **(V2)** the global training-residual 95% quantile. Both are frozen constants (generative/residual-sourced,
-  no per-location calibration data — so the deployability property is identical to APMD's under either control).
+  no per-location calibration data — the deployability property is identical to APMD's under either control).
+  **V2 consistency check:** V2 is residual-fit, and §IV-D reports a residual-fit learned head under-covers on
+  zero-shot regional transfer (0.868 vs 0.954); V2 should likewise under-cover regionally. If V2 instead transfers
+  well, that tensions with §IV-D and must be investigated, not glossed.
 - Build Gaussian intervals/quantiles from μ_CGM ± the constant scale; score APMD vs V1, V2.
-- **Primary metric: Cov95 in the high-variance-phase cells** (per-horizon within it). **Secondary:** aggregate
-  WIS + its dispersion/miss-penalty decomposition; horizon-stratified and per-region Cov95/WIS.
-- Aggregate coverage is expected to be ~indistinguishable (all share σ²_k); the test is decided in the
-  stratified cells, per §0.
+- **High-variance cell definition (fixed, not invented):** the forecast-origin dominant phase, per §IV-C2 verbatim
+  — "Conditioning on the frozen HMM's dominant phase at the forecast origin ($\arg\max\gamma_h$; states ordered by
+  emission variance)"; the high-variance cell = the highest-emission-variance state (the post-COVID dominant
+  regime, 59% of regional test-weeks).
+- **Primary decision metric (single): the SIGNED Cov95 gap in the high-variance cells, per horizon** — the
+  prediction is *under-coverage* by the fixed width (§4). Aggregate coverage is expected ~indistinguishable
+  (shared σ²_k); the decision is made in this stratum only.
+- **Corroborating evidence only (NOT in the verdict):** aggregate WIS + dispersion/miss-penalty decomposition;
+  horizon- and per-region-stratified Cov95/WIS. Reported for mechanism consistency, never entering the decision.
+- **Inference unit / multiplicity:** the high-variance-cell Cov95 is a proportion over the high-variance-stratum
+  forecast cells (pooled over regions; autocorrelated), reported descriptively with **no significance test and no
+  multiplicity adjustment** (estimates, not tests), consistent with the paper's stance.
 
-## 4. Decision rule / falsification (both branches locked BEFORE scoring)
-- **Branch APMD-WINS (predicted):** if, in the high-variance cells, fixed-width Cov95 is **≥ 0.02 further from
-  nominal than APMD's** (0.02 = the paper's revision-noise floor) AND its WIS miss-penalty there is higher →
-  confirm "phase-adaptivity avoids surge under-coverage (operationally meaningful)." Keep the phase-mixture
-  structure; add the two-regime narrative and the width-driver clarification (width varies via γ-weighted
-  σ²_within, CV 52%; σ²_between's 2.5% is a separate, small term — rebutting the "static/decorative width"
-  reading).
-- **Branch PREDICTION-FAILED / TIE:** if fixed-width Cov95 in the high-variance cells is **within 0.02 of APMD's**
-  and WIS is indistinguishable → record the prediction as **FAILED**; **retract** the claim that the phase-mixture
-  machinery is operationally necessary; **simplify** the method and re-narrate ("a frozen 3-state HMM's
-  stationary emission variance as a constant interval scale attains zero-shot regional Cov95 0.954 while all deep
-  UQ methods sit at 0.29–0.70"). The deployability contribution survives unchanged in this branch.
+## 4. Decision rule / falsification (single metric; locked BEFORE scoring)
+Decision is on the **signed high-variance-cell Cov95 gap** alone — WIS decomposition is corroboration, not part of
+the verdict (this closes the mixed-outcome hole). Threshold = **0.026** (the ablation's SESOI_Cov95 = cross-region
+Cov95 SD): the SAME threshold paper-wide, avoiding threshold-shopping — and it is the *harder* bar here (a lower
+one would only favour us). Three mutually exclusive outcomes on the signed gap:
+- **APMD-WINS (predicted):** fixed-width high-variance-cell Cov95 is **≥ 0.026 further BELOW nominal** than APMD's
+  (fixed under-covers the surge cells more). → confirm the *relative* claim; keep the phase-mixture structure; add
+  the two-regime narrative + the width-driver clarification (width varies via γ-weighted σ²_within, CV 52%;
+  σ²_between's 2.5% is a separate, small term — rebutting the "static/decorative width" reading). WIS miss-penalty
+  reported as corroboration only.
+- **TIE / SIMPLIFY:** fixed-width high-variance-cell Cov95 **within 0.026 of APMD's** → record prediction FAILED;
+  retract "the phase machinery is operationally necessary"; simplify to the 3-scalar constant scale and re-narrate
+  ("a frozen 3-state HMM's stationary emission variance as a constant interval scale attains zero-shot regional
+  Cov95 0.954 while all deep UQ sit at 0.29–0.70"). Deployability survives unchanged.
+- **WRONG-SIGN (mechanism refuted):** fixed-width **over-covers** the high-variance cells (even if |dev| is large)
+  → the operational prediction (fixed under-covers the surge) is FALSE; record as refuted; do NOT claim a win from
+  a wrong-direction deviation.
+
+**Winning-branch narrative (pre-committed — most important):** even on a win the numbers are APMD ≈0.89 vs fixed
+≈0.77 — *both* under-cover the surge. The claim is therefore strictly **relative** (phase-adaptivity *reduces*
+surge under-coverage), **not absolute** (surge coverage is adequate — it is not). The residual absolute
+under-coverage (0.89 at high-variance h=4) is exactly what a **horizon-adaptive native scale** would fix; this
+result is the direct motivation for that extension, not a claim the interval suffices in surges.
 
 ## 5. Honest limitations to state regardless of branch
 - Width ≤ max σ_k = 1.381 (convex-combination ceiling): **the interval cannot exceed the emission variance of the
