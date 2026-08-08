@@ -233,3 +233,46 @@ itself an ADDITIONAL failure mode of the residual-fit recipe, NOT a defect of th
 
 **Artifact:** committed to tracked `runs/apmd_diagnostic/` as an amendment BEFORE the full 5-seed numbers exist; the
 joint-arm script `scripts/exp1a_joint_vanilla_head.py` is written and run only when A2.1/§3.1 triggers.
+
+---
+
+## 7. RESULTS (appended 2026-08-08, after the full 5-seed run; numbers-blind boundary = git 3544a77 lock + 70e8506 amend)
+
+**Harness integrity:** the two-part checkpoint-MAE assert (§3(c)) passed for ALL 5 seeds (summary.json only writes if
+every assert passes; seed42 computed 0.46202 vs record 0.46202, 1e-7). CG b-primary raw reproduces exp1b
+bit-faithfully (5-seed regional 0.868; per-seed 0.832/0.825/0.919/0.919/0.844). `vanilla_forward_with_hlast` asserted
+equal to `model(x)`.
+
+**§4 BRANCH (Vanilla zero-shot regional Cov95 h1–4 avg, 5-seed mean):** raw **0.789** / RMS **0.754** / q95 **0.736**
+— all ≤ 0.920 (CONF-side), no NEAR → **BRANCH = CONFIRM** (as computed by locked `decide()`).
+
+**A2.1 hollow-CONFIRM gate:** Vanilla raw NATIONAL in-dist Cov95 (5-seed mean) = **0.8919 < 0.924** → **GATE FIRES**
+→ the §4.1 CONFIRM sentence is NOT licensed → the **two-axis narrative is adopted** and the **joint arm (A2.2)
+auto-triggers**.
+
+**Per-seed structure (reported per LOCK anti-aggregation; it STRENGTHENS the two-axis reading):**
+| seed | Vanilla in-dist (national raw) | Vanilla transfer (regional raw) |
+|---|---|---|
+| 42   | 0.738 | 0.724 |
+| 123  | 0.956 | 0.798 |
+| 456  | 0.973 | 0.821 |
+| 789  | 0.958 | 0.807 |
+| 1024 | 0.834 | 0.797 |
+
+→ On the **3 seeds where Vanilla IS in-dist-calibrated** (123/456/789, ≥0.924) the identical recipe STILL
+under-covers transfer (~0.80) — extending the clean "a well-calibrated learned head fails to transfer" evidence
+BEYOND CG b-primary. The **2 low-in-dist seeds** (42/1024) show the recipe is backbone-fragile. The 5-seed mean
+(0.892) is dragged below the 0.924 gate by those two → gate fires on the locked mean rule (applied as locked; the
+per-seed split is reported, not used to re-slice the decision).
+
+**Temperatures foreclose the inflation/shrinkage rebuttal on BOTH backbones (the confound-1 answer):** neither a
+variance-matched (RMS) nor a coverage-targeting (q95) train-holdout temperature lifts transfer to nominal — Vanilla
+*worsens* (0.789 → 0.754 / 0.736; s<1, per A2.3), CG b-primary stays under (0.868 → RMS 0.877 / q95 0.864, both
+< 0.920). The q95 arm — pre-registered as the one that could flip to THREAT under leptokurtosis — did **not** flip.
+
+**Adopted (numbers-blind wording now instantiated):** the two-axis narrative (A2.1). No manuscript edit is made until
+the joint arm (A2.2) completes and the user directs the reflection. b-primary's mechanism-source claim remains
+RETRACTED (confound-2 out of scope).
+
+**Artifacts:** `runs/exp1a_vanilla_distributional/{summary.json, result_seed{42,123,456,789,1024}.json, full_run.log}`;
+`scripts/exp1a_vanilla_distributional_head.py`.

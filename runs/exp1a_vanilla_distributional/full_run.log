@@ -1,0 +1,133 @@
+[exp1a] device=cuda seeds=[42, 123, 456, 789, 1024] smoke=False
+[seed 42] vanilla ckpt MAE 0.4620 vs record 0.4620 (tol 0.001) OK
+[seed 42] vanilla σ-head: N_train=582 N_hold=146 s_rms=[0.812, 0.69, 0.822, 0.954] s_q95=[0.79, 0.705, 0.765, 0.703]
+[StateEmbed Init] shape=(3, 64)  norms=[3.807, 3.421, 3.316]  cos: (0,1)=-0.5837 (0,2)=-0.5461 (1,2)=-0.3615
+[seed 42] vanilla      raw  regional Cov95 h1-4avg = 0.7240
+[seed 42] vanilla      rms  regional Cov95 h1-4avg = 0.6549
+[seed 42] vanilla      q95  regional Cov95 h1-4avg = 0.6253
+[seed 42] cg_bprimary  raw  regional Cov95 h1-4avg = 0.8324
+[seed 42] cg_bprimary  rms  regional Cov95 h1-4avg = 0.8711
+[seed 42] cg_bprimary  q95  regional Cov95 h1-4avg = 0.8888
+[seed 123] vanilla ckpt MAE 0.4068 vs record 0.4068 (tol 0.001) OK
+[seed 123] vanilla σ-head: N_train=582 N_hold=146 s_rms=[0.909, 0.889, 0.93, 1.04] s_q95=[0.917, 0.871, 0.883, 0.986]
+[StateEmbed Init] shape=(3, 64)  norms=[3.364, 3.417, 2.926]  cos: (0,1)=-0.6277 (0,2)=-0.4164 (1,2)=-0.4464
+[seed 123] vanilla      raw  regional Cov95 h1-4avg = 0.7980
+[seed 123] vanilla      rms  regional Cov95 h1-4avg = 0.7706
+[seed 123] vanilla      q95  regional Cov95 h1-4avg = 0.7643
+[seed 123] cg_bprimary  raw  regional Cov95 h1-4avg = 0.8253
+[seed 123] cg_bprimary  rms  regional Cov95 h1-4avg = 0.8490
+[seed 123] cg_bprimary  q95  regional Cov95 h1-4avg = 0.8471
+[seed 456] vanilla ckpt MAE 0.4231 vs record 0.4231 (tol 0.001) OK
+[seed 456] vanilla σ-head: N_train=582 N_hold=146 s_rms=[1.156, 0.967, 1.327, 1.287] s_q95=[0.816, 1.113, 1.56, 1.265]
+[StateEmbed Init] shape=(3, 64)  norms=[3.364, 3.421, 3.920]  cos: (0,1)=-0.3327 (0,2)=-0.5679 (1,2)=-0.5873
+[seed 456] vanilla      raw  regional Cov95 h1-4avg = 0.8210
+[seed 456] vanilla      rms  regional Cov95 h1-4avg = 0.8800
+[seed 456] vanilla      q95  regional Cov95 h1-4avg = 0.8597
+[seed 456] cg_bprimary  raw  regional Cov95 h1-4avg = 0.9193
+[seed 456] cg_bprimary  rms  regional Cov95 h1-4avg = 0.8624
+[seed 456] cg_bprimary  q95  regional Cov95 h1-4avg = 0.8443
+[seed 789] vanilla ckpt MAE 0.4183 vs record 0.4183 (tol 0.001) OK
+[seed 789] vanilla σ-head: N_train=582 N_hold=146 s_rms=[0.893, 0.804, 0.774, 0.824] s_q95=[0.819, 0.736, 0.723, 0.818]
+[StateEmbed Init] shape=(3, 64)  norms=[3.084, 3.384, 3.915]  cos: (0,1)=-0.2701 (0,2)=-0.5542 (1,2)=-0.6518
+[seed 789] vanilla      raw  regional Cov95 h1-4avg = 0.8067
+[seed 789] vanilla      rms  regional Cov95 h1-4avg = 0.7374
+[seed 789] vanilla      q95  regional Cov95 h1-4avg = 0.7159
+[seed 789] cg_bprimary  raw  regional Cov95 h1-4avg = 0.9195
+[seed 789] cg_bprimary  rms  regional Cov95 h1-4avg = 0.9232
+[seed 789] cg_bprimary  q95  regional Cov95 h1-4avg = 0.9121
+[seed 1024] vanilla ckpt MAE 0.4655 vs record 0.4655 (tol 0.001) OK
+[seed 1024] vanilla σ-head: N_train=582 N_hold=146 s_rms=[0.849, 0.807, 0.8, 0.816] s_q95=[0.901, 0.821, 0.702, 0.714]
+[StateEmbed Init] shape=(3, 64)  norms=[3.799, 3.384, 2.931]  cos: (0,1)=-0.6726 (0,2)=-0.5195 (1,2)=-0.2829
+[seed 1024] vanilla      raw  regional Cov95 h1-4avg = 0.7968
+[seed 1024] vanilla      rms  regional Cov95 h1-4avg = 0.7273
+[seed 1024] vanilla      q95  regional Cov95 h1-4avg = 0.7146
+[seed 1024] cg_bprimary  raw  regional Cov95 h1-4avg = 0.8441
+[seed 1024] cg_bprimary  rms  regional Cov95 h1-4avg = 0.8785
+[seed 1024] cg_bprimary  q95  regional Cov95 h1-4avg = 0.8268
+
+=== AGGREGATE ===
+{
+  "vanilla": {
+    "raw": {
+      "regional_cov95_h1_4avg": 0.7892953020134228,
+      "std": 0.03377336319140433,
+      "per_seed": [
+        0.724,
+        0.798,
+        0.821,
+        0.8067,
+        0.7968
+      ]
+    },
+    "rms": {
+      "regional_cov95_h1_4avg": 0.7540604026845638,
+      "std": 0.07344950007831212,
+      "per_seed": [
+        0.6549,
+        0.7706,
+        0.88,
+        0.7374,
+        0.7273
+      ]
+    },
+    "q95": {
+      "regional_cov95_h1_4avg": 0.7359731543624161,
+      "std": 0.07643994785237902,
+      "per_seed": [
+        0.6253,
+        0.7643,
+        0.8597,
+        0.7159,
+        0.7146
+      ]
+    }
+  },
+  "cg_bprimary": {
+    "raw": {
+      "regional_cov95_h1_4avg": 0.8681208053691275,
+      "std": 0.042280813878131485,
+      "per_seed": [
+        0.8324,
+        0.8253,
+        0.9193,
+        0.9195,
+        0.8441
+      ]
+    },
+    "rms": {
+      "regional_cov95_h1_4avg": 0.8768456375838927,
+      "std": 0.02515480649690733,
+      "per_seed": [
+        0.8711,
+        0.849,
+        0.8624,
+        0.9232,
+        0.8785
+      ]
+    },
+    "q95": {
+      "regional_cov95_h1_4avg": 0.8638255033557047,
+      "std": 0.03155087022299535,
+      "per_seed": [
+        0.8888,
+        0.8471,
+        0.8443,
+        0.9121,
+        0.8268
+      ]
+    }
+  },
+  "decision": {
+    "vanilla_regional_cov95": {
+      "raw": 0.7892953020134228,
+      "rms": 0.7540604026845638,
+      "q95": 0.7359731543624161
+    },
+    "bands": {
+      "raw": "CONF",
+      "rms": "CONF",
+      "q95": "CONF"
+    },
+    "BRANCH": "CONFIRM"
+  }
+}
