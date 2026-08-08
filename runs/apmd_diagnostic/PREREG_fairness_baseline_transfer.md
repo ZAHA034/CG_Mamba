@@ -174,3 +174,62 @@ New script `scripts/exp1a_vanilla_distributional_head.py` (mirrors `exp1b_learne
 two-part checkpoint-MAE assert against `runs/baselines_test_eval.csv`, μ-frozen σ-head, RMS + q95 temperature
 variants, forward-integrity self-check); re-score b-primary (CG) under both temperatures in the same run; outputs to
 `runs/exp1a_vanilla_distributional/`.
+
+---
+
+## AMENDMENT 2 (2026-08-08) — hollow-CONFIRM gate + joint-arm design pin
+
+**Transparency:** written AFTER observing the SMOKE run (seed 42 only: Vanilla μ-frozen head national **in-dist
+Cov95 = 0.738** vs CG 0.945; Vanilla s^RMS/s^q95 all < 1) but BEFORE the full 5-seed locked decision numbers exist.
+Like the q95 addition, this amendment moves ONLY in the **burden-increasing** direction — it adds a CONFIRM
+disqualification and adds the joint arm; it never loosens a locked band or the §4 branch computation. The threshold
+below reuses a locked bound → **zero new numeric degrees of freedom**.
+
+**Interpretation reframe (from the smoke, stated now so it is not post-hoc):** Vanilla's in-dist failure is NOT
+merely "the experiment got weaker." The stronger reading: the identical recipe on an independent backbone is worse
+*in-distribution*, so CG's **0.868 was the recipe's BEST case** — transfer failed on the one backbone where the
+recipe is even in-dist-calibrated (CG, 0.945). Role split, fixed now: the clean "a well-calibrated learned head
+fails to transfer" evidence is **CG b-primary itself** (0.945→0.868); the **Vanilla arm** is the supporting
+evidence that the recipe is **backbone-fragile and that we did not pick a head-favorable backbone**. Together they
+answer the original attack ("you only tried your own backbone"); the stronger residual attack ("a *properly trained*
+distributional baseline would transfer") is closable only by the joint arm (A2.2).
+
+### A2.1 hollow-CONFIRM gate (interpretation gate on §4 — NOT a change to the band math)
+The §4 branch is computed exactly as locked. ADDITIONAL one-directional condition on the CONFIRM *interpretation*:
+- Even when §4 computes BRANCH=CONFIRM, the §4.1 CONFIRM sentence is **licensed only if Vanilla raw national
+  in-distribution Cov95 (5-seed mean) ≥ 0.924** (= the locked NEAR lower bound 0.95−τ; natural definition "a head
+  qualifies to carry a transfer test iff it is itself within τ of nominal in-distribution"; no new number invented).
+- If that in-dist Cov95 < 0.924 (smoke ⇒ near-certain to fire): the §4.1 CONFIRM sentence is **replaced** by the
+  two-axis narrative (reframe above) and the **joint arm (A2.2) auto-triggers**. This gate can only DOWNGRADE a
+  CONFIRM to the two-axis narrative; it can never upgrade any branch.
+
+### A2.2 joint end-to-end arm — DESIGN PINNED (triggers per §3.1 THREAT, or per A2.1)
+- **Design:** the Vanilla Mamba architecture + a LogVar head, μ and σ trained **jointly** end-to-end under
+  Gaussian-NLL; ALL other training config identical to the original Vanilla point model (only the loss is swapped:
+  point-loss → Gaussian-NLL); same 5 seeds. Cost: 5 retrains of the ~108K-param model.
+- **Honest role (must be stated in the manuscript):** joint changes TWO variables at once (backbone AND training
+  protocol) → it is **NOT** the 1-variable isolation experiment. Its role is the direct answer to the residual
+  attack *"does a properly trained distributional baseline transfer?"* — never blended with the μ-frozen result.
+- **μ-drift reporting duty:** joint training changes μ. Report the jointly-trained model's **national MAE** alongside
+  — the point-accuracy cost of the NLL objective is itself informative; hiding it is an attack surface.
+- **Verdict:** the SAME §4 bands on joint's zero-shot regional transfer Cov95 (raw). Pre-written branch sentences:
+  - **joint CONF-side (≤0.920) AND joint in-dist ≥0.924:** "Even a jointly-trained distributional head,
+    in-distribution-calibrated on the strongest baseline (Cov95 [X_indist]), under-covers under zero-shot regional
+    transfer (Cov95 [X]); recalibration-free near-nominal transfer is not achieved by a properly-trained learned
+    distributional baseline either."
+  - **joint NEAR [0.924,0.976]:** "A jointly-trained distributional head on Vanilla Mamba attains near-nominal
+    zero-shot transfer (Cov95 [X]); recalibration-free multi-region calibration IS achievable by a properly-trained
+    learned baseline, so CG-Mamba is *among* such models" (uniqueness dropped, 'among' repositioning as §4.1 THREAT).
+  - **joint FAILS in-dist (national Cov95 < 0.924):** "No learned-variance path we evaluated — μ-frozen or jointly
+    trained — achieved in-distribution calibration on the independent baseline; this supports the backbone-fragility
+    of learned residual-fit UQ, while leaving open, as a stated limitation, that some untried recipe might."
+  - PARTIAL / BOUNDARY as in §4.
+
+### A2.3 temperature-<1 interpretation (reporting note, decided in advance)
+The smoke shows Vanilla s^RMS, s^q95 all < 1 (holdout σ looked too large), so the temperature "correction" *worsens*
+Vanilla transfer (0.738 → 0.644 / 0.609). This is the pinned formula operating honestly. Fixed meaning: a
+train-internal holdout does not reflect the test-era residual scale, so holdout-based recalibration back-fires —
+itself an ADDITIONAL failure mode of the residual-fit recipe, NOT a defect of this experiment's design.
+
+**Artifact:** committed to tracked `runs/apmd_diagnostic/` as an amendment BEFORE the full 5-seed numbers exist; the
+joint-arm script `scripts/exp1a_joint_vanilla_head.py` is written and run only when A2.1/§3.1 triggers.
