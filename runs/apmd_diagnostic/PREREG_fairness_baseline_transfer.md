@@ -285,3 +285,40 @@ RETRACTED (confound-2 out of scope).
 
 **Artifacts:** `runs/exp1a_vanilla_distributional/{summary.json, result_seed{42,123,456,789,1024}.json, full_run.log}`;
 `scripts/exp1a_vanilla_distributional_head.py`.
+
+### 7.2 JOINT arm RESULTS (appended 2026-08-08; triggered by A2.1; recipe = A2.2 + A2.2-refinement val-WIS)
+
+**BRANCH = JOINT_FAILS_INDIST** (locked A2.2 logic): joint national **in-dist Cov95 5-seed mean = 0.711 < 0.924** →
+the jointly-trained distributional Vanilla head does **not reliably calibrate in-distribution**, so it cannot be a
+"properly-calibrated baseline that then transfers." Transfer Cov95 mean 0.625 (moot given the in-dist gate).
+
+| metric | mean | per-seed [42,123,456,789,1024] |
+|---|---|---|
+| in-dist Cov95 | 0.711 (std **0.218**) | 0.794 / 0.790 / 0.722 / **0.302** / 0.950 |
+| transfer Cov95 | 0.625 | 0.492 / 0.642 / 0.676 / 0.458 / 0.858 |
+| national MAE (μ-drift) | **0.539** | 0.455 / 0.547 / 0.528 / 0.674 / 0.489 |
+
+Point model MAE = 0.435 → **μ-drift +0.104 (+24%)**: the NLL objective sacrifices point accuracy (μ selected for
+val-WIS, per A2.2-refinement).
+
+**Adopted (pre-written JOINT_FAILS_INDIST sentence):** "No learned-variance path we evaluated — μ-frozen or jointly
+trained — achieved in-distribution calibration on the independent baseline; this supports the backbone-fragility of
+learned residual-fit UQ, while leaving open, as a stated limitation, that some untried recipe might."
+
+**HONEST CAVEATS (foregrounded, NOT buried — reverse-inflation discipline):**
+1. **Instability, not a clean uniform failure.** in-dist ranges 0.302–0.950 (std 0.218). The "fails in-dist" is
+   driven by seed-to-seed training/selection **instability**. Diagnostic: for seed 42 more training made in-dist
+   *worse* (smoke 5-ep 0.914 → full 103-ep 0.794) — val-WIS selection (val = pre-COVID) picks σ calibrated for the
+   pre-COVID era that miscalibrates on the post-COVID test. This is consistent with the thesis (learned residual-fit
+   UQ is fragile under distribution shift) but it is messier/weaker evidence than the μ-frozen arm's clean
+   "3/5 in-dist-calibrated seeds still fail transfer."
+2. **HPO limitation.** The joint arm used the point-model's winning config (`d64_nl3_lr5e-04`) + val-WIS selection
+   (pre-registered, fair, NOT tuned against us) — NOT a distributional-objective HPO grid. A distributional-tuned
+   recipe might stabilize it; this is exactly the pre-committed "some untried recipe might" limitation.
+3. **μ-drift.** joint sacrifices 24% point accuracy AND still fails calibration.
+4. **Scope guard (confound-2 stays retracted).** This supports only that **no learned residual-fit path we tried**
+   delivers recalibration-free zero-shot transfer calibration while APMD does; it does **NOT** establish WHY (the
+   generative-source mechanism remains unestablished). No "property of the generative scale" attribution is made.
+
+**Artifacts:** `runs/exp1a_joint_vanilla/{summary.json, result_seed{...}.json, full_run.log}`;
+`scripts/exp1a_joint_vanilla_head.py`.

@@ -1,0 +1,55 @@
+[exp1a-joint] device=cuda seeds=[42, 123, 456, 789, 1024] smoke=False
+[seed 42] joint trained: val-WIS 0.2605 @ep103 (123 ep, 710s)
+[seed 42] joint national in-dist Cov95=0.7936 MAE=0.4550 (pt-model 0.435) | transfer Cov95=0.4921
+[seed 123] joint trained: val-WIS 0.2835 @ep58 (78 ep, 452s)
+[seed 123] joint national in-dist Cov95=0.7903 MAE=0.5471 (pt-model 0.435) | transfer Cov95=0.6421
+[seed 456] joint trained: val-WIS 0.2729 @ep53 (73 ep, 422s)
+[seed 456] joint national in-dist Cov95=0.7215 MAE=0.5284 (pt-model 0.435) | transfer Cov95=0.6763
+[seed 789] joint trained: val-WIS 0.2700 @ep78 (98 ep, 564s)
+[seed 789] joint national in-dist Cov95=0.3020 MAE=0.6738 (pt-model 0.435) | transfer Cov95=0.4584
+[seed 1024] joint trained: val-WIS 0.3007 @ep29 (49 ep, 283s)
+[seed 1024] joint national in-dist Cov95=0.9497 MAE=0.4886 (pt-model 0.435) | transfer Cov95=0.8581
+
+=== SUMMARY ===
+{
+  "joint_indist_cov95": {
+    "mean": 0.7114093959731543,
+    "std": 0.21792195375620632,
+    "per_seed": [
+      0.7936,
+      0.7903,
+      0.7215,
+      0.302,
+      0.9497
+    ]
+  },
+  "joint_transfer_cov95": {
+    "mean": 0.6254026845637585,
+    "std": 0.14328987158159323,
+    "per_seed": [
+      0.4921,
+      0.6421,
+      0.6763,
+      0.4584,
+      0.8581
+    ]
+  },
+  "joint_national_mae": {
+    "mean": 0.5385836541852695,
+    "std": 0.07474862158165516,
+    "per_seed": [
+      0.455,
+      0.5471,
+      0.5284,
+      0.6738,
+      0.4886
+    ],
+    "point_model_mae": 0.435
+  },
+  "decision": {
+    "joint_indist_cov95_mean": 0.7114093959731543,
+    "joint_transfer_cov95_mean": 0.6254026845637585,
+    "transfer_band": "CONF",
+    "BRANCH": "JOINT_FAILS_INDIST"
+  }
+}

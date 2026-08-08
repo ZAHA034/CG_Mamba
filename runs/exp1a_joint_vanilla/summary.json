@@ -1,0 +1,42 @@
+{
+  "joint_indist_cov95": {
+    "mean": 0.7114093959731543,
+    "std": 0.21792195375620632,
+    "per_seed": [
+      0.7936,
+      0.7903,
+      0.7215,
+      0.302,
+      0.9497
+    ]
+  },
+  "joint_transfer_cov95": {
+    "mean": 0.6254026845637585,
+    "std": 0.14328987158159323,
+    "per_seed": [
+      0.4921,
+      0.6421,
+      0.6763,
+      0.4584,
+      0.8581
+    ]
+  },
+  "joint_national_mae": {
+    "mean": 0.5385836541852695,
+    "std": 0.07474862158165516,
+    "per_seed": [
+      0.455,
+      0.5471,
+      0.5284,
+      0.6738,
+      0.4886
+    ],
+    "point_model_mae": 0.435
+  },
+  "decision": {
+    "joint_indist_cov95_mean": 0.7114093959731543,
+    "joint_transfer_cov95_mean": 0.6254026845637585,
+    "transfer_band": "CONF",
+    "BRANCH": "JOINT_FAILS_INDIST"
+  }
+}
