@@ -204,9 +204,18 @@ The §4 branch is computed exactly as locked. ADDITIONAL one-directional conditi
   CONFIRM to the two-axis narrative; it can never upgrade any branch.
 
 ### A2.2 joint end-to-end arm — DESIGN PINNED (triggers per §3.1 THREAT, or per A2.1)
-- **Design:** the Vanilla Mamba architecture + a LogVar head, μ and σ trained **jointly** end-to-end under
-  Gaussian-NLL; ALL other training config identical to the original Vanilla point model (only the loss is swapped:
-  point-loss → Gaussian-NLL); same 5 seeds. Cost: 5 retrains of the ~108K-param model.
+- **Design:** the Vanilla Mamba architecture + a parallel LogVar head, μ and σ trained **jointly** end-to-end under
+  Gaussian-NLL. Loss is swapped (point-MSE → Gaussian-NLL on a μ+logσ² head) AND the model-selection / early-stop
+  metric switches from **val-MAE@h1 → val-WIS** (the distributional analogue). All remaining config identical to the
+  original Vanilla point model (Adam, lr, epochs=200, patience=20, batch=32, data, same 5 seeds). Cost: 5 retrains of
+  the ~108K-param model.
+  **A2.2-refinement (2026-08-08, pre-joint-result, burden-INCREASING):** the original A2.2 shorthand "only the loss
+  is swapped" would, taken literally, keep val-MAE@h1 selection — which selects the *distributional* baseline on
+  *point* accuracy, crippling it in our favor (self-serving). val-WIS selection is the FAIRER, harder-for-us choice
+  (the distributional baseline is selected on a distributional criterion) and it **restores the parent lock
+  `PREREG_nll_quantile_head_ablation.md` arm (a)** spec ("selection switches from val-MAE@h1 to val-WIS"), so it
+  introduces **zero new degrees of freedom**. μ is thus selected for WIS, not MAE → μ-drift is expected and reported
+  (below).
 - **Honest role (must be stated in the manuscript):** joint changes TWO variables at once (backbone AND training
   protocol) → it is **NOT** the 1-variable isolation experiment. Its role is the direct answer to the residual
   attack *"does a properly trained distributional baseline transfer?"* — never blended with the μ-frozen result.
