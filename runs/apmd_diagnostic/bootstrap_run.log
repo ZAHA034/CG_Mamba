@@ -1,0 +1,12 @@
+[bootstrap] device=cuda — running canonical APMD forward (5 seeds x 10 regions)
+[StateEmbed Init] shape=(3, 64)  norms=[3.807, 3.421, 3.316]  cos: (0,1)=-0.5837 (0,2)=-0.5461 (1,2)=-0.3615
+[StateEmbed Init] shape=(3, 64)  norms=[3.364, 3.417, 2.926]  cos: (0,1)=-0.6277 (0,2)=-0.4164 (1,2)=-0.4464
+[StateEmbed Init] shape=(3, 64)  norms=[3.364, 3.421, 3.920]  cos: (0,1)=-0.3327 (0,2)=-0.5679 (1,2)=-0.5873
+[StateEmbed Init] shape=(3, 64)  norms=[3.084, 3.384, 3.915]  cos: (0,1)=-0.2701 (0,2)=-0.5542 (1,2)=-0.6518
+[StateEmbed Init] shape=(3, 64)  norms=[3.799, 3.384, 2.931]  cos: (0,1)=-0.6726 (0,2)=-0.5195 (1,2)=-0.2829
+[cache] saved 29800 cells
+[bootstrap] cells=29800  point Cov95=0.9548 (should ~0.954)  weeks=149
+[PRIMARY] L=6wk: Cov95=0.9548  95% CI [0.9304, 0.9776]  (bootstrap SD 0.0126)
+[robust ] L=4wk: Cov95=0.9548  95% CI [0.9305, 0.9756]  (bootstrap SD 0.0114)
+[robust ] L=8wk: Cov95=0.9548  95% CI [0.9271, 0.9809]  (bootstrap SD 0.0139)
+WROTE runs/apmd_diagnostic/bootstrap_ci_result.json
