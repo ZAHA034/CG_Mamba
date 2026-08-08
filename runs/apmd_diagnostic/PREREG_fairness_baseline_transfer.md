@@ -301,6 +301,15 @@ the jointly-trained distributional Vanilla head does **not reliably calibrate in
 Point model MAE = 0.435 → **μ-drift +0.104 (+24%)**: the NLL objective sacrifices point accuracy (μ selected for
 val-WIS, per A2.2-refinement).
 
+**Cleanest piece inside the messy verdict (seed 1024; descriptive, 1/5):** the ONE joint seed that DID calibrate
+in-distribution (1024, in-dist 0.950 ≥ 0.924) STILL failed transfer (0.858, CONF-side) — reproducing the μ-frozen
+arm's axis-1 pattern ("the run that calibrates in-dist still fails transfer") INSIDE the joint arm. Not to be
+summarized away by "joint was unstable."
+
+**Outlier-robustness (leave-one-out, same discipline as the b-primary seed-123 footnote):** the in-dist mean 0.711
+is pulled down by seed 789 (0.302); dropping it, the 4-seed mean is **0.814 < 0.924** → the JOINT_FAILS_INDIST gate
+still fires. The verdict does not rest on one runaway seed.
+
 **Adopted (pre-written JOINT_FAILS_INDIST sentence):** "No learned-variance path we evaluated — μ-frozen or jointly
 trained — achieved in-distribution calibration on the independent baseline; this supports the backbone-fragility of
 learned residual-fit UQ, while leaving open, as a stated limitation, that some untried recipe might."
